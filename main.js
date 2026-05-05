@@ -1,8 +1,7 @@
 /**
  * Champions Summit 2026 — Main JavaScript
- * Handles: mobile navigation, clean same-page routing, smooth scroll, fade-in animations
+ * Handles mobile navigation, same-page anchor scrolling, nav state, and fade-in animations.
  */
-
 (function () {
   'use strict';
 
@@ -17,7 +16,7 @@
     navToggle.setAttribute('aria-expanded', 'false');
   }
 
-  function openOrCloseMobileNav(event) {
+  function toggleMobileNav(event) {
     if (event) {
       event.preventDefault();
       event.stopPropagation();
@@ -28,31 +27,14 @@
     navToggle.setAttribute('aria-expanded', String(isOpen));
   }
 
-  function getSectionFromPath(pathname) {
-    const cleanPath = pathname.replace(/\/$/, '');
-    const map = {
-      '': 'top',
-      '/': 'top',
-      '/the-room': 'the-room',
-      '/agenda': 'agenda',
-      '/code': 'code',
-      '/partners': 'partners'
-    };
-    return map[cleanPath] || null;
-  }
-
-  function scrollToSection(sectionId, updateUrl) {
-    const target = document.getElementById(sectionId);
+  function scrollToHash(hash) {
+    if (!hash || hash === '#') return;
+    const target = document.querySelector(hash);
     if (!target) return;
 
     const navHeight = mainNav ? mainNav.offsetHeight : 0;
-    const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+    const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 18;
     window.scrollTo({ top: Math.max(targetPos, 0), behavior: 'smooth' });
-
-    if (updateUrl && window.history && window.history.pushState) {
-      const path = sectionId === 'top' ? '/' : '/' + sectionId;
-      window.history.pushState({ sectionId: sectionId }, '', path);
-    }
   }
 
   if (navToggle && navLinks) {
@@ -61,12 +43,8 @@
     navToggle.style.position = 'relative';
     navToggle.style.zIndex = '1002';
 
-    navToggle.addEventListener('click', openOrCloseMobileNav);
-    navToggle.addEventListener('touchend', openOrCloseMobileNav, { passive: false });
-
-    navLinks.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', closeMobileNav);
-    });
+    navToggle.addEventListener('click', toggleMobileNav);
+    navToggle.addEventListener('touchend', toggleMobileNav, { passive: false });
 
     document.addEventListener('click', function (event) {
       if (!navLinks.classList.contains('nav-open')) return;
@@ -75,31 +53,33 @@
     });
   }
 
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      const hash = link.getAttribute('href');
+      const target = hash ? document.querySelector(hash) : null;
+      if (!target) return;
+
+      event.preventDefault();
+      closeMobileNav();
+      scrollToHash(hash);
+
+      if (window.history && window.history.pushState) {
+        window.history.pushState(null, '', hash);
+      } else {
+        window.location.hash = hash;
+      }
+    });
+  });
+
   if (mainNav) {
     window.addEventListener('scroll', function () {
       mainNav.classList.toggle('nav-scrolled', window.scrollY > 60);
     });
   }
 
-  document.querySelectorAll('[data-scroll-target]').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      const sectionId = this.getAttribute('data-scroll-target');
-      if (!sectionId) return;
-      e.preventDefault();
-      closeMobileNav();
-      scrollToSection(sectionId, true);
-    });
-  });
-
-  window.addEventListener('popstate', function () {
-    const sectionId = getSectionFromPath(window.location.pathname);
-    if (sectionId) scrollToSection(sectionId, false);
-  });
-
   window.addEventListener('load', function () {
-    const sectionId = getSectionFromPath(window.location.pathname);
-    if (sectionId && sectionId !== 'top') {
-      setTimeout(function () { scrollToSection(sectionId, false); }, 80);
+    if (window.location.hash) {
+      setTimeout(function () { scrollToHash(window.location.hash); }, 80);
     }
   });
 
