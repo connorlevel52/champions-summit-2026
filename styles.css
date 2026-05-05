@@ -816,8 +816,33 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 /* =====================================================
-   FIX: Mobile navigation reliability
-   Ensures the hamburger opens above page content on mobile.
+   FIX: Centre CEO Firesides confirmation block in hero
+   Keeps the original one-pager styling intact.
+   ===================================================== */
+.hero .hero-content > div[style*="rgba(255,255,255,0.08)"] {
+  text-align: center !important;
+}
+
+.hero .hero-content > div[style*="rgba(255,255,255,0.08)"] > p:first-child {
+  display: block;
+  width: 100%;
+  max-width: none;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.hero .hero-content > div[style*="rgba(255,255,255,0.08)"] > p:last-child {
+  max-width: 760px;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* =====================================================
+   FIX: Mobile hamburger menu
+   Makes the three-line menu open reliably above page content.
    ===================================================== */
 @media (max-width: 768px) {
   .main-nav {
@@ -825,15 +850,32 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   }
 
   .nav-toggle {
+    display: flex;
     position: relative;
     z-index: 10001;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
     z-index: 10000;
+    flex-direction: column;
+    background: #022F4A;
+    padding: 1.5rem 2rem;
+    gap: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,.4);
   }
 
   .nav-links.nav-open {
     display: flex !important;
+  }
+
+  body.nav-menu-open {
+    overflow: hidden;
   }
 }
