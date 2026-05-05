@@ -794,3 +794,23 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
     max-width: 1080px;
   }
 }
+
+
+/* =====================================================
+   FIX: legacy dark-section class used by one-pager sponsor block
+   Keeps white sponsorship text visible by restoring the intended dark background.
+   ===================================================== */
+.dark-section {
+  background: #022F4A;
+  color: #FFF;
+}
+.dark-section h1,
+.dark-section h2,
+.dark-section h3,
+.dark-section h4,
+.dark-section p {
+  color: inherit;
+}
+.dark-section .section-header h2 {
+  color: #FFF;
+}
