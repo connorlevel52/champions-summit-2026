@@ -15,6 +15,10 @@ champions-summit-2026/
   speakers.html       Speakers & Mentors
   register.html       Registration / Investment
   styles.css          Shared stylesheet (all pages)
+  favicon.ico         Browser favicon fallback
+  favicon-32x32.png   Browser favicon
+  favicon-16x16.png   Small browser favicon
+  apple-touch-icon.png iOS/home screen icon
   js/main.js          Accordion, nav toggle, smooth scroll, fade-in
   images/             (empty — placeholder images need to be added here)
   fonts/              (empty — using system fonts: Trebuchet MS + Helvetica/Arial)
@@ -81,7 +85,7 @@ REGISTRATION (register.html):
 
 OTHER:
   - Social media links (footer on all pages)
-  - Favicon image (currently using inline SVG placeholder)
+  - Favicon image updated and linked across all pages
 
 
 SECTIONS NEEDING SPONSOR LOGOS
