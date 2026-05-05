@@ -864,3 +864,24 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .sponsors-section.dark-section .accent-label {
   color: #D8722C !important;
 }
+
+
+/* Final targeted fixes: hero CEO text + title sponsor placeholder */
+.hero-ceo-card,
+.hero-ceo-card .ceo-firesides-label,
+.hero-ceo-card .hero-ceo-speakers {
+  text-align: center !important;
+}
+
+.hero-ceo-card .hero-ceo-speakers {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 760px;
+}
+
+.title-sponsor-placeholder,
+.title-sponsor-placeholder .title-sponsor-placeholder-heading,
+.title-sponsor-placeholder .title-sponsor-placeholder-copy {
+  color: #022F4A !important;
+}
