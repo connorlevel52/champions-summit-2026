@@ -673,5 +673,49 @@
     </footer>
 
     <script src="js/main.js"></script>
+
+<script>
+/* Mobile nav inline failsafe */
+document.addEventListener('DOMContentLoaded', function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+
+  if (!toggle || !links) return;
+
+  toggle.style.pointerEvents = 'auto';
+  toggle.style.touchAction = 'manipulation';
+  toggle.style.position = 'relative';
+  toggle.style.zIndex = '10001';
+
+  function closeMenu() {
+    links.classList.remove('nav-open');
+    toggle.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-menu-open');
+  }
+
+  function toggleMenu(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (links.classList.contains('nav-open')) {
+      closeMenu();
+    } else {
+      links.classList.add('nav-open');
+      toggle.classList.add('active');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('nav-menu-open');
+    }
+  }
+
+  toggle.addEventListener('click', toggleMenu, false);
+  toggle.addEventListener('touchend', toggleMenu, false);
+
+  links.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+  });
+});
+</script>
+
 </body>
 </html>

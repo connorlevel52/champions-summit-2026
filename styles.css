@@ -841,34 +841,48 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 
 
 /* =====================================================
-   FIX: Mobile hamburger menu
-   Makes the three-line menu open reliably above page content.
+   MOBILE NAV HARD FIX
+   Ensures hamburger is tappable and menu appears above all content.
    ===================================================== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .main-nav {
-    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+  }
+
+  .nav-container {
+    position: relative;
+    z-index: 100000;
   }
 
   .nav-toggle {
-    display: flex;
-    position: relative;
-    z-index: 10001;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
+    display: flex !important;
+    position: relative !important;
+    z-index: 100002 !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+  }
+
+  .nav-toggle span {
+    pointer-events: none !important;
   }
 
   .nav-links {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    z-index: 10000;
-    flex-direction: column;
-    background: #022F4A;
-    padding: 1.5rem 2rem;
-    gap: 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    display: none !important;
+    position: fixed !important;
+    top: 70px !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 100001 !important;
+    flex-direction: column !important;
+    background: #022F4A !important;
+    padding: 1.5rem 2rem 2rem !important;
+    gap: 1rem !important;
+    box-shadow: 0 12px 30px rgba(0,0,0,.4) !important;
   }
 
   .nav-links.nav-open {
@@ -876,6 +890,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   }
 
   body.nav-menu-open {
-    overflow: hidden;
+    overflow: hidden !important;
   }
 }
