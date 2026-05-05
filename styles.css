@@ -816,25 +816,24 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 /* =====================================================
-   FIX: Centre CEO Firesides confirmation block in hero
-   Keeps the original one-pager styling intact.
+   FIX: Mobile navigation reliability
+   Ensures the hamburger opens above page content on mobile.
    ===================================================== */
-.hero .hero-content > div[style*="rgba(255,255,255,0.08)"] {
-  text-align: center !important;
-}
+@media (max-width: 768px) {
+  .main-nav {
+    z-index: 9999;
+  }
 
-.hero .hero-content > div[style*="rgba(255,255,255,0.08)"] > p:first-child {
-  display: block;
-  width: 100%;
-  max-width: none;
-  text-align: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
+  .nav-toggle {
+    position: relative;
+    z-index: 10001;
+  }
 
-.hero .hero-content > div[style*="rgba(255,255,255,0.08)"] > p:last-child {
-  max-width: 760px;
-  text-align: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  .nav-links {
+    z-index: 10000;
+  }
+
+  .nav-links.nav-open {
+    display: flex !important;
+  }
 }
