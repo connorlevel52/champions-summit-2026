@@ -759,3 +759,90 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   html { scroll-behavior: auto; }
 }
+
+/* =====================================================
+   31. DESKTOP WIDTH CONTROL PATCH
+   Keeps page content centred and prevents sections from
+   stretching to the browser edges on large screens.
+   ===================================================== */
+:root {
+  --site-max-width: 1120px;
+  --site-wide-max-width: 1280px;
+  --site-gutter: clamp(1.25rem, 4vw, 3rem);
+}
+
+.container,
+.section-container,
+.footer-content,
+.footer-container,
+.footer-bottom {
+  width: 100%;
+  max-width: var(--site-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--site-gutter);
+  padding-right: var(--site-gutter);
+}
+
+.container--wide,
+.nav-container {
+  width: 100%;
+  max-width: var(--site-wide-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--site-gutter);
+  padding-right: var(--site-gutter);
+}
+
+.main-nav {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.hero-content {
+  width: min(100%, 900px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--site-gutter);
+  padding-right: var(--site-gutter);
+}
+
+.hero-content p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Keep full-bleed backgrounds, but contain the actual content. */
+section > h1,
+section > h2,
+section > h3,
+section > p,
+section > ul,
+section > ol {
+  max-width: var(--site-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--site-gutter);
+  padding-right: var(--site-gutter);
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --site-max-width: 1160px;
+    --site-wide-max-width: 1320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container,
+  .section-container,
+  .container--wide,
+  .nav-container,
+  .footer-content,
+  .footer-container,
+  .footer-bottom,
+  .hero-content {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
