@@ -819,3 +819,48 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+/* Targeted final fixes: CEO label alignment + dark section contrast */
+.hero-content .ceo-firesides-label {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+  padding-left: .22em !important;
+}
+
+.hero-content .ceo-firesides-label,
+.hero-content .ceo-firesides-label * {
+  color: #D8722C !important;
+}
+
+/* Explicitly cover the inline-styled dark sections, not only class-based sections */
+.section--blue,
+#agenda,
+#code,
+#partners.dark-section,
+.sponsors-section.dark-section {
+  background: #022F4A !important;
+  color: #FFF !important;
+}
+
+.section--blue h1, .section--blue h2, .section--blue h3, .section--blue h4, .section--blue p, .section--blue li,
+#agenda h1, #agenda h2, #agenda h3, #agenda h4, #agenda p, #agenda li,
+#code h1, #code h2, #code h3, #code h4, #code p, #code li,
+#partners.dark-section h1, #partners.dark-section h2, #partners.dark-section h3, #partners.dark-section h4, #partners.dark-section p, #partners.dark-section li,
+.sponsors-section.dark-section h1, .sponsors-section.dark-section h2, .sponsors-section.dark-section h3, .sponsors-section.dark-section h4, .sponsors-section.dark-section p, .sponsors-section.dark-section li {
+  color: #FFF !important;
+}
+
+.section--blue .accent-label,
+#agenda .accent-label,
+#code .accent-label,
+#partners.dark-section .accent-label,
+.sponsors-section.dark-section .accent-label {
+  color: #D8722C !important;
+}
