@@ -98,6 +98,72 @@
     });
   });
 
+  // ── STAT COUNT-UP ANIMATION ──
+  // Targets the four stat divs in the stat band immediately below the hero.
+  // Numbers animate from 0 to their final value with a staggered delay when
+  // the stat band scrolls into view. Runs once per page load.
+  (function () {
+    var statBand = document.querySelector('.hero--home + section');
+    if (!statBand) return;
+
+    var statNumbers = statBand.querySelectorAll('[style*="font-size:2.2rem"]');
+    if (!statNumbers.length) return;
+
+    // Parse the display value — handles integers, decimals, and percentages
+    function parseTarget(el) {
+      var raw = el.textContent.trim();
+      var numeric = parseFloat(raw.replace(/[^0-9.]/g, ''));
+      var suffix = raw.replace(/[0-9.]/g, '');
+      return { numeric: numeric, suffix: suffix };
+    }
+
+    function animateStat(el, target, suffix, duration) {
+      var start = null;
+      var isDecimal = (target % 1 !== 0);
+
+      function step(timestamp) {
+        if (!start) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        // Ease out cubic
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var current = eased * target;
+        el.textContent = (isDecimal ? current.toFixed(1) : Math.floor(current)) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = (isDecimal ? target.toFixed(1) : target) + suffix;
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    var hasRun = false;
+
+    function runCountUp() {
+      if (hasRun) return;
+      hasRun = true;
+
+      statNumbers.forEach(function (el, i) {
+        var parsed = parseTarget(el);
+        setTimeout(function () {
+          animateStat(el, parsed.numeric, parsed.suffix, 1400);
+        }, i * 180);
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            runCountUp();
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(statBand);
+    } else {
+      runCountUp();
+    }
+  })();
+
   const fadeElements = document.querySelectorAll('.fade-in');
   if (fadeElements.length > 0 && 'IntersectionObserver' in window) {
     const fadeObserver = new IntersectionObserver(function (entries) {
