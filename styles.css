@@ -113,7 +113,7 @@ p  { margin-bottom: 1.25rem; line-height: 1.8; }
   color: #FFF; overflow: hidden; margin-top: 70px;
   background: #022F4A;
 }
-.hero--home { min-height: 70vh; }
+.hero--home { min-height: 50vh; }
 .hero-inner, .hero--inner {
   position: relative; min-height: 38vh;
   display: flex; align-items: center; justify-content: center; text-align: center;
