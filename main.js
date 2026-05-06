@@ -54,10 +54,29 @@
   }
 
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-  link.addEventListener('click', function () {
-    closeMobileNav();
+    link.addEventListener('click', function () {
+      closeMobileNav();
+
+      var hash = link.getAttribute('href');
+      if (!hash || hash === '#' || hash === '#top') return;
+
+      var target = document.querySelector(hash);
+      if (!target) return;
+
+      // Find the fade-in container inside the target section
+      var fadeEl = target.querySelector('.fade-in, .fade-in--visible');
+      if (!fadeEl) return;
+
+      // Reset the animation
+      fadeEl.classList.remove('fade-in--visible');
+      fadeEl.classList.add('fade-in');
+
+      // Re-trigger after a short delay to let the scroll start
+      setTimeout(function () {
+        fadeEl.classList.add('fade-in--visible');
+      }, 400);
+    });
   });
-});
 
   if (mainNav) {
     window.addEventListener('scroll', function () {
