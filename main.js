@@ -206,7 +206,7 @@
   var nav = document.querySelector('.main-nav');
   if (nav) {
     nav.style.opacity = '0';
-    nav.style.transform = 'translateY(-20px)';
+    nav.style.transform ='translateY(-20px)';
     nav.style.transition = 'opacity .6s ease, transform .6s ease';
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
@@ -216,44 +216,28 @@
     });
   }
 
-  // 2. Hero content — staggered fade in after nav
-  var heroContent = document.querySelector('.hero-content');
-  if (heroContent) {
-    heroContent.style.opacity = '0';
-    heroContent.style.transform = 'translateY(16px)';
-    heroContent.style.transition = 'opacity .7s ease .4s, transform .7s ease .4s';
+  // 2. Hero elements — staggered fade in sequentially
+  var heroAccent = document.querySelector('.hero-accent');
+  var heroH1 = document.querySelector('.hero-content h1');
+  var heroP = document.querySelector('.hero-content p');
+  var heroCeoCard = document.querySelector('.hero-ceo-card');
+  var heroCta = document.querySelector('.hero-cta');
+
+  var heroEls = [heroAccent, heroH1, heroP, heroCeoCard, heroCta];
+
+  heroEls.forEach(function (el, i) {
+    if (!el) return;
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(22px)';
+    el.style.transition = 'opacity .7s ease, transform .7s ease';
+    el.style.transitionDelay = (0.3 + i * 0.15) + 's';
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
-        heroContent.style.opacity = '1';
-        heroContent.style.transform = 'translateY(0)';
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
       });
     });
-  }
-
-  // 3. Accent line white highlight sweep
-  var accent = document.querySelector('.hero-accent');
-  if (accent) {
-    accent.style.position = 'relative';
-    accent.style.overflow = 'hidden';
-    accent.style.display = 'inline-block';
-
-    var sweep = document.createElement('span');
-    sweep.style.cssText = [
-      'position:absolute',
-      'top:0', 'left:-100%',
-      'width:60%', 'height:100%',
-      'background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.75) 50%, transparent 100%)',
-      'pointer-events:none',
-      'transition:left .55s ease'
-    ].join(';');
-
-    accent.appendChild(sweep);
-
-    // Fire sweep after hero has faded in
-    setTimeout(function () {
-      sweep.style.left = '160%';
-    }, 900);
-  }
+  });
 })();
 
 // ── APPLY POPUP ──
