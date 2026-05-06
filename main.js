@@ -54,22 +54,10 @@
   }
 
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-    link.addEventListener('click', function (event) {
-      const hash = link.getAttribute('href');
-      const target = hash ? document.querySelector(hash) : null;
-      if (!target) return;
-
-      event.preventDefault();
-      closeMobileNav();
-      scrollToHash(hash);
-
-      if (window.history && window.history.pushState) {
-        window.history.pushState(null, '', hash);
-      } else {
-        window.location.hash = hash;
-      }
-    });
+  link.addEventListener('click', function () {
+    closeMobileNav();
   });
+});
 
   if (mainNav) {
     window.addEventListener('scroll', function () {
