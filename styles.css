@@ -140,14 +140,14 @@ p  { margin-bottom: 1.25rem; line-height: 1.8; }
   z-index: 1;
 }
 
-.hero-content { position: relative; z-index: 2; max-width: 900px; padding: 2rem; }
-.hero-accent { display: inline-block; font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; color: #D8722C; margin-bottom: 1.5rem; }
-.hero-content h1 { color: #FFF; text-transform: uppercase; margin-bottom: .75rem; }
-.hero-content h2 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-weight: 400; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgba(255,255,255,.9); margin-bottom: 1.5rem; letter-spacing: 0; }
-.hero-content p { font-size: 1.1rem; color: rgba(255,255,255,.85); max-width: 650px; margin: 0 auto 2rem; }
-.hero-subtitle { font-size: clamp(1rem, 2vw, 1.35rem); color: rgba(255,255,255,.9); margin-bottom: 2rem; }
+.hero-content { position: relative; z-index: 2; max-width: 900px; padding: 1rem 2rem; }
+.hero-accent { display: inline-block; font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; color: #D8722C; margin-bottom: .75rem; }
+.hero-content h1 { color: #FFF; text-transform: uppercase; margin-bottom: .5rem; font-size: clamp(1.75rem, 4vw, 3rem); }
+.hero-content h2 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-weight: 400; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgba(255,255,255,.9); margin-bottom: 1rem; letter-spacing: 0; }
+.hero-content p { font-size: 1.1rem; color: rgba(255,255,255,.85); max-width: 650px; margin: 0 auto 1.25rem; }
+.hero-subtitle { font-size: clamp(1rem, 2vw, 1.35rem); color: rgba(255,255,255,.9); margin-bottom: 1.25rem; }
 
-.hero-cta { display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 2rem; }
+.hero-cta { display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 1rem; }
 .btn-scroll { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: .9rem; color: rgba(255,255,255,.7); transition: color .3s; }
 .btn-scroll:hover { color: #D8722C; }
 
