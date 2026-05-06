@@ -199,3 +199,105 @@
     fadeElements.forEach(function (el) { el.classList.add('fade-in--visible'); });
   }
 })();
+
+// ── APPLY POPUP ──
+// Triggers on exit intent (mouse leaving viewport top) OR after 10 seconds.
+// Shows once per session using sessionStorage.
+(function () {
+  var STORAGE_KEY = 'cs2026_popup_seen';
+  if (sessionStorage.getItem(STORAGE_KEY)) return;
+
+  var hasShown = false;
+
+  function buildPopup() {
+    // Overlay
+    var overlay = document.createElement('div');
+    overlay.id = 'cs-popup-overlay';
+    overlay.style.cssText = [
+      'position:fixed', 'inset:0', 'z-index:9000',
+      'background:rgba(2,47,74,0.75)', 'backdrop-filter:blur(4px)',
+      'display:flex', 'align-items:center', 'justify-content:center',
+      'padding:1.5rem', 'opacity:0', 'transition:opacity .35s ease'
+    ].join(';');
+
+    // Modal
+    var modal = document.createElement('div');
+    modal.style.cssText = [
+      'background:#022F4A',
+      'border:1px solid rgba(255,255,255,0.12)',
+      'border-top:4px solid #D8722C',
+      'border-radius:10px',
+      'max-width:520px', 'width:100%',
+      'padding:2.5rem 2.5rem 2rem',
+      'position:relative',
+      'transform:translateY(24px)',
+      'transition:transform .35s ease',
+      'text-align:center',
+      'box-shadow:0 30px 80px rgba(0,0,0,0.5)'
+    ].join(';');
+
+    modal.innerHTML = [
+      // Close button
+      '<button id="cs-popup-close" aria-label="Close" style="position:absolute;top:1rem;right:1.25rem;background:none;border:none;color:rgba(255,255,255,0.4);font-size:1.4rem;cursor:pointer;line-height:1;transition:color .2s;" onmouseover="this.style.color=\'#FFF\'" onmouseout="this.style.color=\'rgba(255,255,255,0.4)\'">&#x2715;</button>',
+
+      // Accent label
+      '<p style="font-family:\'Trebuchet MS\',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.22em;color:#D8722C;margin-bottom:1.25rem;">150 Seats · Application Only</p>',
+
+      // Headline
+      '<h2 style="font-family:\'Trebuchet MS\',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#FFF;margin-bottom:1rem;line-height:1.2;">Before You Go.</h2>',
+
+      // Body
+      '<p style="color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.75;margin-bottom:.75rem;">Champions Summit 2026 is application-only and capped at 150 seats. Last year\'s room sold out. This year\'s will too.</p>',
+      '<p style="color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.75;margin-bottom:2rem;">The application takes 5 minutes. <strong style="color:#FFF;">Your seat won\'t wait.</strong></p>',
+
+      // CTA
+      '<a href="https://level52.typeform.com/cs2026-app?typeform-source=www.google.com" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#D8722C;color:#FFF;font-family:\'Trebuchet MS\',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.9rem 2rem;border-radius:4px;border:2px solid #D8722C;text-decoration:none;transition:all .3s;" onmouseover="this.style.background=\'#c0631f\';this.style.borderColor=\'#c0631f\'" onmouseout="this.style.background=\'#D8722C\';this.style.borderColor=\'#D8722C\'">Apply to Attend</a>',
+
+      // Dismiss
+      '<p style="margin-top:1.25rem;"><button id="cs-popup-dismiss" style="background:none;border:none;color:rgba(255,255,255,0.35);font-size:.8rem;cursor:pointer;text-decoration:underline;font-family:\'Helvetica Neue\',sans-serif;transition:color .2s;" onmouseover="this.style.color=\'rgba(255,255,255,0.7)\'" onmouseout="this.style.color=\'rgba(255,255,255,0.35)\'">I\'m not interested</button></p>'
+    ].join('');
+
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
+
+    // Animate in
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        overlay.style.opacity = '1';
+        modal.style.transform = 'translateY(0)';
+      });
+    });
+
+    function closePopup() {
+      overlay.style.opacity = '0';
+      modal.style.transform = 'translateY(24px)';
+      setTimeout(function () {
+        if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+      }, 350);
+    }
+
+    document.getElementById('cs-popup-close').addEventListener('click', closePopup);
+    document.getElementById('cs-popup-dismiss').addEventListener('click', closePopup);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closePopup();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closePopup();
+    });
+  }
+
+  function showPopup() {
+    if (hasShown) return;
+    hasShown = true;
+    sessionStorage.setItem(STORAGE_KEY, '1');
+    buildPopup();
+  }
+
+  // Trigger 1: exit intent — mouse leaves through the top of the viewport
+  document.addEventListener('mouseleave', function (e) {
+    if (e.clientY <= 0) showPopup();
+  });
+
+  // Trigger 2: 10 second timer
+  setTimeout(showPopup, 10000);
+})();
