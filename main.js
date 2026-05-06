@@ -200,6 +200,62 @@
   }
 })();
 
+// ── PAGE LOAD ENTRANCE ANIMATIONS ──
+(function () {
+  // 1. Nav — fade down from above
+  var nav = document.querySelector('.main-nav');
+  if (nav) {
+    nav.style.opacity = '0';
+    nav.style.transform = 'translateY(-20px)';
+    nav.style.transition = 'opacity .6s ease, transform .6s ease';
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        nav.style.opacity = '1';
+        nav.style.transform = 'translateY(0)';
+      });
+    });
+  }
+
+  // 2. Hero content — staggered fade in after nav
+  var heroContent = document.querySelector('.hero-content');
+  if (heroContent) {
+    heroContent.style.opacity = '0';
+    heroContent.style.transform = 'translateY(16px)';
+    heroContent.style.transition = 'opacity .7s ease .4s, transform .7s ease .4s';
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        heroContent.style.opacity = '1';
+        heroContent.style.transform = 'translateY(0)';
+      });
+    });
+  }
+
+  // 3. Accent line white highlight sweep
+  var accent = document.querySelector('.hero-accent');
+  if (accent) {
+    accent.style.position = 'relative';
+    accent.style.overflow = 'hidden';
+    accent.style.display = 'inline-block';
+
+    var sweep = document.createElement('span');
+    sweep.style.cssText = [
+      'position:absolute',
+      'top:0', 'left:-100%',
+      'width:60%', 'height:100%',
+      'background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.75) 50%, transparent 100%)',
+      'pointer-events:none',
+      'transition:left .55s ease'
+    ].join(';');
+
+    accent.appendChild(sweep);
+
+    // Fire sweep after hero has faded in
+    setTimeout(function () {
+      sweep.style.left = '160%';
+    }, 900);
+  }
+})();
+
 // ── APPLY POPUP ──
 // Triggers on exit intent (mouse leaving viewport top) OR after 10 seconds.
 // Shows once per session using sessionStorage.
