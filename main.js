@@ -206,7 +206,7 @@
   var nav = document.querySelector('.main-nav');
   if (nav) {
     nav.style.opacity = '0';
-    nav.style.transform ='translateY(-20px)';
+    nav.style.transform = 'translateY(-20px)';
     nav.style.transition = 'opacity .6s ease, transform .6s ease';
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
@@ -216,28 +216,36 @@
     });
   }
 
-  // 2. Hero elements — staggered fade in sequentially
-  var heroAccent = document.querySelector('.hero-accent');
-  var heroH1 = document.querySelector('.hero-content h1');
-  var heroP = document.querySelector('.hero-content p');
-  var heroCeoCard = document.querySelector('.hero-ceo-card');
-  var heroCta = document.querySelector('.hero-cta');
+  // 2. Hero elements — staggered fade in on DOMContentLoaded
+  function animateHero() {
+    var selectors = [
+      '.hero-accent',
+      '.hero-content h1',
+      '.hero-content p',
+      '.hero-ceo-card',
+      '.hero-cta'
+    ];
 
-  var heroEls = [heroAccent, heroH1, heroP, heroCeoCard, heroCta];
+    selectors.forEach(function (sel, i) {
+      var el = document.querySelector(sel);
+      if (!el) return;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(28px)';
+      el.style.transition = 'none';
 
-  heroEls.forEach(function (el, i) {
-    if (!el) return;
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(22px)';
-    el.style.transition = 'opacity .7s ease, transform .7s ease';
-    el.style.transitionDelay = (0.3 + i * 0.15) + 's';
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () {
+      setTimeout(function () {
+        el.style.transition = 'opacity .8s cubic-bezier(0.22,1,0.36,1), transform .8s cubic-bezier(0.22,1,0.36,1)';
         el.style.opacity = '1';
         el.style.transform = 'translateY(0)';
-      });
+      }, 300 + i * 160);
     });
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', animateHero);
+  } else {
+    animateHero();
+  }
 })();
 
 // ── APPLY POPUP ──
