@@ -113,7 +113,7 @@ p  { margin-bottom: 1.25rem; line-height: 1.8; }
   color: #FFF; overflow: hidden; margin-top: 70px;
   background: #022F4A;
 }
-.hero--home { min-height: 90vh; }
+.hero--home { min-height: 70vh; }
 .hero-inner, .hero--inner {
   position: relative; min-height: 38vh;
   display: flex; align-items: center; justify-content: center; text-align: center;
@@ -715,7 +715,7 @@ footer, .main-footer {
   .brand-separator, .brand-event { display: none; }
 
   .hero { min-height: 60vh; margin-top: 70px; }
-  .hero--home { min-height: 70vh; }
+  .hero--home { min-height: 55vh; }
   .hero-inner, .hero--inner { min-height: 30vh; padding: 3rem 1.5rem; }
 
   .pillars-grid, .audience-grid, .panelists-grid { grid-template-columns: 1fr; }
@@ -734,7 +734,7 @@ footer, .main-footer {
 @media (max-width: 480px) {
   .container { padding: 0 1.25rem; }
   .hero { min-height: 50vh; }
-  .hero--home { min-height: 60vh; }
+  .hero--home { min-height: 50vh; }
   .stats-grid, .speakers-grid, .founders-grid, .sponsors-grid, .outcomes-grid { grid-template-columns: 1fr; }
   .btn-large { padding: 1rem 2rem; font-size: .9rem; }
   .pricing-card { padding: 2rem 1.5rem; }
