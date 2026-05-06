@@ -248,6 +248,20 @@
   }
 })();
 
+// ── EXTERNAL LINKS — auto open in new tab ──
+// Catches all current and ensures any future external links behave correctly.
+(function () {
+  document.querySelectorAll('a[href]').forEach(function (link) {
+    var href = link.getAttribute('href');
+    if (!href) return;
+    // External if starts with http/https and not the current domain
+    if (/^https?:\/\//i.test(href) && !href.includes(window.location.hostname)) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    }
+  });
+})();
+
 // ── APPLY POPUP ──
 // Triggers on exit intent (mouse leaving viewport top) OR after 10 seconds.
 // Shows once per session using sessionStorage.
