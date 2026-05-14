@@ -11,10 +11,21 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Ensure all sections are truly full-width */
-        section { width: 100% !important; max-width: none !important; box-sizing: border-box; }
-        /* Fix stat animation — keep /10 visible */
-        .stat-animated { display: inline; }
+        /* Force full-width on main and all direct section children */
+        main {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow-x: hidden;
+        }
+        main > section {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            box-sizing: border-box !important;
+        }
     </style>
 </head>
 <body>
@@ -96,7 +107,7 @@
                         <div style="font-size:.7rem; text-transform:uppercase; letter-spacing:.18em; color:rgba(255,255,255,0.65); margin-top:.4rem;">Curated Seats</div>
                     </div>
                     <div>
-                        <div style="font-family:'Trebuchet MS',sans-serif; font-size:2.2rem; font-weight:700; color:#FFF; line-height:1;"><span class="stat-animated">9.5</span><span style="font-size:2.2rem; font-weight:700; color:#FFF;"> / 10</span></div>
+                        <div style="font-family:'Trebuchet MS',sans-serif; font-size:2.2rem; font-weight:700; color:#FFF; line-height:1;">9.5 / 10</div>
                         <div style="font-size:.7rem; text-transform:uppercase; letter-spacing:.18em; color:rgba(255,255,255,0.65); margin-top:.4rem;">Avg. Rating — 2025 Attendees</div>
                     </div>
                     <div>
