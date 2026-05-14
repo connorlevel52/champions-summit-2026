@@ -11,20 +11,17 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Force full-width on main and all direct section children */
-        main {
-            width: 100% !important;
-            max-width: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            overflow-x: hidden;
-        }
+        /* Full-width sections — prevent any inherited constraints */
+        html, body { width: 100%; overflow-x: hidden; }
+        main { display: block; width: 100%; max-width: 100%; margin: 0; padding: 0; }
         main > section {
-            width: 100% !important;
+            width: 100%;
             max-width: 100% !important;
             margin-left: 0 !important;
             margin-right: 0 !important;
-            box-sizing: border-box !important;
+            left: 0;
+            right: 0;
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -148,13 +145,13 @@
                 <!-- PHOTO STRIP — 3 event photos from 2025 -->
                 <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; margin-top:1.5rem;">
                     <div style="border-radius:6px; overflow:hidden; aspect-ratio:4/3;">
-                        <img src="photo_strip.jpg" alt="Champions Summit 2025 — networking" style="width:100%; height:100%; object-fit:cover; display:block;">
+                        <img src="photos/photo_strip.jpg" alt="Champions Summit 2025 — networking" style="width:100%; height:100%; object-fit:cover; display:block;">
                     </div>
                     <div style="border-radius:6px; overflow:hidden; aspect-ratio:4/3;">
-                        <img src="photo_strip_3.jpg" alt="Champions Summit 2025 — CEO Fireside" style="width:100%; height:100%; object-fit:cover; display:block;">
+                        <img src="photos/photo_strip_3.jpg" alt="Champions Summit 2025 — CEO Fireside" style="width:100%; height:100%; object-fit:cover; display:block;">
                     </div>
                     <div style="border-radius:6px; overflow:hidden; aspect-ratio:4/3;">
-                        <img src="photo_strip_2.jpg" alt="Champions Summit 2025 — attendees in conversation" style="width:100%; height:100%; object-fit:cover; display:block;">
+                        <img src="photos/photo_strip_2.jpg" alt="Champions Summit 2025 — attendees in conversation" style="width:100%; height:100%; object-fit:cover; display:block;">
                     </div>
                 </div>
             </div>
@@ -184,7 +181,7 @@
 
                 <!-- WIDE ROOM SHOT -->
                 <div class="fade-in" style="max-width:1100px; margin:0 auto 3rem; border-radius:8px; overflow:hidden; box-shadow:0 8px 32px rgba(2,47,74,0.12);">
-                    <img src="wide_room_shot.jpg" alt="Champions Summit 2025 — full room" style="width:100%; display:block; object-fit:cover; max-height:480px;">
+                    <img src="photos/wide_room_shot.jpg" alt="Champions Summit 2025 — full room" style="width:100%; display:block; object-fit:cover; max-height:480px;">
                 </div>
 
                 <!-- 2026 CONFIRMED CEO FIRESIDES — full cards -->
@@ -420,7 +417,7 @@
 
                 <!-- AGENDA PHOTO -->
                 <div class="fade-in" style="max-width:800px; margin:0 auto 3rem; border-radius:8px; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.25);">
-                    <img src="agenda.jpg" alt="Champions Summit 2025 — presenter on stage" style="width:100%; display:block; object-fit:cover; max-height:420px;">
+                    <img src="photos/agenda.jpg" alt="Champions Summit 2025 — presenter on stage" style="width:100%; display:block; object-fit:cover; max-height:420px;">
                 </div>
 
                 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem; max-width:1000px; margin:0 auto;">
