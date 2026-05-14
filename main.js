@@ -231,12 +231,20 @@
 
     modal.innerHTML = [
       '<button id="cs-popup-close" aria-label="Close" style="position:absolute;top:1rem;right:1.25rem;background:none;border:none;color:rgba(255,255,255,0.4);font-size:1.4rem;cursor:pointer;line-height:1;transition:color .2s;" onmouseover="this.style.color=\'#FFF\'" onmouseout="this.style.color=\'rgba(255,255,255,0.4)\'">&#x2715;</button>',
-      '<p style="font-family:\'Trebuchet MS\',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.22em;color:#D8722C;margin-bottom:1.25rem;">150 Seats · Application Only</p>',
+      '<p style="font-family:\'Trebuchet MS\',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.22em;color:#D8722C;margin-bottom:1.25rem;">150 Seats · Application Only · October 26–27</p>',
       '<h2 style="font-family:\'Trebuchet MS\',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#FFF;margin-bottom:1rem;line-height:1.2;">Before You Go.</h2>',
-      '<p style="color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.75;margin-bottom:.75rem;">Champions Summit 2026 is application-only and capped at 150 seats. Last year\'s room sold out. This year\'s will too.</p>',
-      '<p style="color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.75;margin-bottom:2rem;">The application takes 5 minutes. <strong style="color:#FFF;">Your seat won\'t wait.</strong></p>',
-      '<a href="https://level52.typeform.com/cs2026-app?typeform-source=www.google.com" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#D8722C;color:#FFF;font-family:\'Trebuchet MS\',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.9rem 2rem;border-radius:4px;border:2px solid #D8722C;text-decoration:none;transition:all .3s;" onmouseover="this.style.background=\'#c0631f\';this.style.borderColor=\'#c0631f\'" onmouseout="this.style.background=\'#D8722C\';this.style.borderColor=\'#D8722C\'">Apply to Attend</a>',
-      '<p style="margin-top:1.25rem;"><button id="cs-popup-dismiss" style="background:none;border:none;color:rgba(255,255,255,0.35);font-size:.8rem;cursor:pointer;text-decoration:underline;font-family:\'Helvetica Neue\',sans-serif;transition:color .2s;" onmouseover="this.style.color=\'rgba(255,255,255,0.7)\'" onmouseout="this.style.color=\'rgba(255,255,255,0.35)\'">I\'m not interested</button></p>'
+      '<p style="color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.75;margin-bottom:2rem;">This room sells out. 150 seats, application-only, and reviewed on a rolling basis. Apply for your seat — or bring your team.</p>',
+      '<div style="display:flex;flex-direction:column;align-items:center;gap:.75rem;margin-bottom:1.5rem;">',
+        '<div style="display:flex;flex-direction:column;align-items:center;gap:.3rem;">',
+          '<a href="https://level52.typeform.com/cs2026-app?typeform-source=www.google.com" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#D8722C;color:#FFF;font-family:\'Trebuchet MS\',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.9rem 2rem;border-radius:4px;border:2px solid #D8722C;text-decoration:none;min-width:220px;" onmouseover="this.style.background=\'#c0631f\';this.style.borderColor=\'#c0631f\'" onmouseout="this.style.background=\'#D8722C\';this.style.borderColor=\'#D8722C\'">Apply for a Seat</a>',
+          '<p style="color:rgba(255,255,255,0.5);font-size:.72rem;margin:0;font-family:\'Trebuchet MS\',sans-serif;letter-spacing:.04em;">Rolling review. Only 150 seats.</p>',
+        '</div>',
+        '<div style="display:flex;flex-direction:column;align-items:center;gap:.3rem;">',
+          '<a href="mailto:jayson@level52.ca?subject=Table%20Inquiry%20%E2%80%94%20Champions%20Summit%202026" style="display:inline-block;background:transparent;color:#FFF;font-family:\'Trebuchet MS\',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.9rem 2rem;border-radius:4px;border:2px solid rgba(255,255,255,0.4);text-decoration:none;min-width:220px;" onmouseover="this.style.borderColor=\'#D8722C\';this.style.color=\'#D8722C\'" onmouseout="this.style.borderColor=\'rgba(255,255,255,0.4)\';this.style.color=\'#FFF\'">Reserve Your Table</a>',
+          '<p style="color:rgba(255,255,255,0.5);font-size:.72rem;margin:0;font-style:italic;">High-potential team? Inquire here.</p>',
+        '</div>',
+      '</div>',
+      '<p style="margin-top:.5rem;"><button id="cs-popup-dismiss" style="background:none;border:none;color:rgba(255,255,255,0.35);font-size:.8rem;cursor:pointer;text-decoration:underline;font-family:\'Helvetica Neue\',sans-serif;transition:color .2s;" onmouseover="this.style.color=\'rgba(255,255,255,0.7)\'" onmouseout="this.style.color=\'rgba(255,255,255,0.35)\'">I\'m not interested</button></p>'
     ].join('');
 
     overlay.appendChild(modal);
