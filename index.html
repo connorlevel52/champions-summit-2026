@@ -10,6 +10,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ensure all sections are truly full-width */
+        section { width: 100% !important; max-width: none !important; box-sizing: border-box; }
+        /* Fix stat animation — keep /10 visible */
+        .stat-animated { display: inline; }
+    </style>
 </head>
 <body>
     <!-- NAVIGATION (lightweight — single page, anchor links) -->
@@ -68,12 +74,12 @@
 
                 <div class="hero-cta">
                     <div style="display:flex; flex-direction:column; align-items:center; gap:.4rem;">
-                        <a href="https://level52.typeform.com/cs2026-app?typeform-source=www.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large" style="width:220px; text-align:center;">Apply for a Seat</a>
-                        <p style="font-size:.72rem; color:rgba(255,255,255,0.6); margin:0; font-family:'Trebuchet MS',sans-serif; letter-spacing:.04em; text-align:center; max-width:220px;">Rolling review. Only 150 seats.</p>
+                        <a href="https://level52.typeform.com/cs2026-app?typeform-source=www.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">Apply for a Seat</a>
+                        <p style="font-size:.72rem; color:rgba(255,255,255,0.6); margin:0; font-family:'Trebuchet MS',sans-serif; letter-spacing:.04em; text-align:center;">Rolling review. Only 150 seats.</p>
                     </div>
                     <div style="display:flex; flex-direction:column; align-items:center; gap:.4rem;">
-                        <a href="mailto:jayson@level52.ca?subject=Table%20Inquiry%20%E2%80%94%20Champions%20Summit%202026" class="btn btn-primary btn-large" style="background:transparent; border:2px solid rgba(255,255,255,0.5); width:220px; text-align:center;">Reserve a Table</a>
-                        <p style="font-size:.72rem; color:rgba(255,255,255,0.55); margin:0; font-style:italic; text-align:center; max-width:220px;">High-potential team? Inquire here.</p>
+                        <a href="mailto:jayson@level52.ca?subject=Table%20Inquiry%20%E2%80%94%20Champions%20Summit%202026" class="btn btn-primary btn-large" style="background:transparent; border:2px solid rgba(255,255,255,0.5);">Reserve a Table</a>
+                        <p style="font-size:.72rem; color:rgba(255,255,255,0.55); margin:0; font-style:italic; text-align:center;">High-potential team? Inquire here.</p>
                     </div>
                 </div>
             </div>
@@ -90,7 +96,7 @@
                         <div style="font-size:.7rem; text-transform:uppercase; letter-spacing:.18em; color:rgba(255,255,255,0.65); margin-top:.4rem;">Curated Seats</div>
                     </div>
                     <div>
-                        <div style="font-family:'Trebuchet MS',sans-serif; font-size:2.2rem; font-weight:700; color:#FFF; line-height:1;">9.5<span style="font-size:2.2rem; font-weight:700; color:#FFF;"> / 10</span></div>
+                        <div style="font-family:'Trebuchet MS',sans-serif; font-size:2.2rem; font-weight:700; color:#FFF; line-height:1;"><span class="stat-animated">9.5</span><span style="font-size:2.2rem; font-weight:700; color:#FFF;"> / 10</span></div>
                         <div style="font-size:.7rem; text-transform:uppercase; letter-spacing:.18em; color:rgba(255,255,255,0.65); margin-top:.4rem;">Avg. Rating — 2025 Attendees</div>
                     </div>
                     <div>
@@ -146,7 +152,7 @@
         <!-- ========================================================================
              2. THE HOOK
         ========================================================================= -->
-        <section class="section section--blue section--angled-bottom">
+        <section class="section section--blue">
             <div class="section-container fade-in">
                 <div class="hook-content">
                     <h2 class="hook-headline">This is not a conference. It is a standard.</h2>
@@ -538,7 +544,7 @@
         <!-- ========================================================================
              POWERED BY LEVEL 52
         ========================================================================= -->
-        <section style="background:#F6F7F9; padding:5rem 0;">
+        <section style="background:#FFFFFF; padding:5rem 0; width:100%; margin:0;">
             <div class="container fade-in" style="max-width:780px; margin:0 auto; text-align:center;">
                 <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C; margin-bottom:1.25rem; display:inline-block;">THE ORGANIZATION BEHIND IT</span>
                 <h2 style="color:#022F4A; margin-bottom:1.25rem;">Powered by Level 52</h2>

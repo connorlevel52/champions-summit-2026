@@ -121,19 +121,26 @@
   // Targets the four stat divs in the stat band immediately below the hero.
   // Numbers animate from 0 to their final value with a staggered delay when
   // the stat band scrolls into view. Runs once per page load.
+  //
+  // IMPORTANT: For stats that have a sibling suffix span (e.g. "9.5 / 10"),
+  // wrap the animated number in a <span class="stat-animated"> so the
+  // animation only updates that span and leaves the suffix intact.
   (function () {
     var statBand = document.querySelector('.hero--home + section');
     if (!statBand) return;
 
-    var statNumbers = statBand.querySelectorAll('[style*="font-size:2.2rem"]');
-    if (!statNumbers.length) return;
+    var statDivs = statBand.querySelectorAll('[style*="font-size:2.2rem"]');
+    if (!statDivs.length) return;
 
-    // Parse the display value — handles integers, decimals, and percentages
+    // Parse the display value — handles integers, decimals, and percentages.
+    // If the div contains a .stat-animated child, read from that span only.
+    // Otherwise read from the full element text.
     function parseTarget(el) {
-      var raw = el.textContent.trim();
+      var target = el.querySelector('.stat-animated') || el;
+      var raw = target.textContent.trim();
       var numeric = parseFloat(raw.replace(/[^0-9.]/g, ''));
       var suffix = raw.replace(/[0-9.]/g, '');
-      return { numeric: numeric, suffix: suffix };
+      return { numeric: numeric, suffix: suffix, el: target };
     }
 
     function animateStat(el, target, suffix, duration) {
@@ -160,10 +167,10 @@
       if (hasRun) return;
       hasRun = true;
 
-      statNumbers.forEach(function (el, i) {
-        var parsed = parseTarget(el);
+      statDivs.forEach(function (div, i) {
+        var parsed = parseTarget(div);
         setTimeout(function () {
-          animateStat(el, parsed.numeric, parsed.suffix, 1400);
+          animateStat(parsed.el, parsed.numeric, parsed.suffix, 1400);
         }, i * 180);
       });
     }
@@ -249,12 +256,10 @@
 })();
 
 // ── EXTERNAL LINKS — auto open in new tab ──
-// Catches all current and ensures any future external links behave correctly.
 (function () {
   document.querySelectorAll('a[href]').forEach(function (link) {
     var href = link.getAttribute('href');
     if (!href) return;
-    // External if starts with http/https and not the current domain
     if (/^https?:\/\//i.test(href) && !href.includes(window.location.hostname)) {
       link.setAttribute('target', '_blank');
       link.setAttribute('rel', 'noopener noreferrer');
@@ -272,7 +277,6 @@
   var hasShown = false;
 
   function buildPopup() {
-    // Overlay
     var overlay = document.createElement('div');
     overlay.id = 'cs-popup-overlay';
     overlay.style.cssText = [
@@ -282,7 +286,6 @@
       'padding:1.5rem', 'opacity:0', 'transition:opacity .35s ease'
     ].join(';');
 
-    // Modal
     var modal = document.createElement('div');
     modal.style.cssText = [
       'background:#022F4A',
@@ -299,30 +302,18 @@
     ].join(';');
 
     modal.innerHTML = [
-      // Close button
       '<button id="cs-popup-close" aria-label="Close" style="position:absolute;top:1rem;right:1.25rem;background:none;border:none;color:rgba(255,255,255,0.4);font-size:1.4rem;cursor:pointer;line-height:1;transition:color .2s;" onmouseover="this.style.color=\'#FFF\'" onmouseout="this.style.color=\'rgba(255,255,255,0.4)\'">&#x2715;</button>',
-
-      // Accent label
       '<p style="font-family:\'Trebuchet MS\',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.22em;color:#D8722C;margin-bottom:1.25rem;">150 Seats · Application Only</p>',
-
-      // Headline
       '<h2 style="font-family:\'Trebuchet MS\',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#FFF;margin-bottom:1rem;line-height:1.2;">Before You Go.</h2>',
-
-      // Body
       '<p style="color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.75;margin-bottom:.75rem;">Champions Summit 2026 is application-only and capped at 150 seats. Last year\'s room sold out. This year\'s will too.</p>',
       '<p style="color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.75;margin-bottom:2rem;">The application takes 5 minutes. <strong style="color:#FFF;">Your seat won\'t wait.</strong></p>',
-
-      // CTA
       '<a href="https://level52.typeform.com/cs2026-app?typeform-source=www.google.com" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#D8722C;color:#FFF;font-family:\'Trebuchet MS\',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.9rem 2rem;border-radius:4px;border:2px solid #D8722C;text-decoration:none;transition:all .3s;" onmouseover="this.style.background=\'#c0631f\';this.style.borderColor=\'#c0631f\'" onmouseout="this.style.background=\'#D8722C\';this.style.borderColor=\'#D8722C\'">Apply to Attend</a>',
-
-      // Dismiss
       '<p style="margin-top:1.25rem;"><button id="cs-popup-dismiss" style="background:none;border:none;color:rgba(255,255,255,0.35);font-size:.8rem;cursor:pointer;text-decoration:underline;font-family:\'Helvetica Neue\',sans-serif;transition:color .2s;" onmouseover="this.style.color=\'rgba(255,255,255,0.7)\'" onmouseout="this.style.color=\'rgba(255,255,255,0.35)\'">I\'m not interested</button></p>'
     ].join('');
 
     overlay.appendChild(modal);
     document.body.appendChild(overlay);
 
-    // Animate in
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
         overlay.style.opacity = '1';
@@ -355,11 +346,9 @@
     buildPopup();
   }
 
-  // Trigger 1: exit intent — mouse leaves through the top of the viewport
   document.addEventListener('mouseleave', function (e) {
     if (e.clientY <= 0) showPopup();
   });
 
-  // Trigger 2: 10 second timer
   setTimeout(showPopup, 10000);
 })();
