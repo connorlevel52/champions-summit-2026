@@ -465,6 +465,14 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   max-width: 1120px !important;
 }
 
+/* Main element must have no padding or margin */
+main {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
 /* All sections are full viewport width — no exceptions */
 section,
 .section--blue,
