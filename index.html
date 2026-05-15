@@ -344,15 +344,24 @@
                         <div style="border-radius:6px; overflow:hidden; aspect-ratio:4/3; cursor:zoom-in;" onclick="csLightbox(2)">
                             <img src="photos/photo_strip_2.jpg" alt="Champions Summit 2025 — attendees in conversation" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
                         </div>
+                        <div style="border-radius:6px; overflow:hidden; aspect-ratio:4/3; cursor:zoom-in;" onclick="csLightbox(3)">
+                            <img src="photos/photo_strip_4.jpg" alt="Champions Summit 2025" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                        <div style="border-radius:6px; overflow:hidden; aspect-ratio:4/3; cursor:zoom-in;" onclick="csLightbox(4)">
+                            <img src="photos/photo_strip_5.jpg" alt="Champions Summit 2025" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                        <div style="border-radius:6px; overflow:hidden; aspect-ratio:4/3; cursor:zoom-in;" onclick="csLightbox(5)">
+                            <img src="photos/photo_strip_6.jpg" alt="Champions Summit 2025" style="width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                        </div>
                     </div>
 
                     <!-- LIGHTBOX -->
-                    <div id="cs-lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9500; background:rgba(2,47,74,0.92); backdrop-filter:blur(6px);" onclick="if(event.target===this)csLightboxClose()">
+                    <div id="cs-lightbox" style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:9500; background:rgba(2,47,74,0.92); backdrop-filter:blur(6px);" onclick="if(event.target===this)csLightboxClose()">
                         <button onclick="csLightboxClose()" aria-label="Close" style="position:absolute; top:1.25rem; right:1.5rem; background:none; border:none; color:#FFF; font-size:2rem; cursor:pointer; line-height:1; opacity:.7; transition:opacity .2s; z-index:9502;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.7'">&#x2715;</button>
                         <button onclick="csLightboxPrev(event)" aria-label="Previous" style="position:absolute; left:1.5rem; top:50%; transform:translateY(-50%); background:#D8722C; border:none; color:#FFF; font-size:1.75rem; line-height:1; cursor:pointer; width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; transition:background .2s; z-index:9502;" onmouseover="this.style.background='#c0631f'" onmouseout="this.style.background='#D8722C'">&#8249;</button>
                         <button onclick="csLightboxNext(event)" aria-label="Next" style="position:absolute; right:1.5rem; top:50%; transform:translateY(-50%); background:#D8722C; border:none; color:#FFF; font-size:1.75rem; line-height:1; cursor:pointer; width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; transition:background .2s; z-index:9502;" onmouseover="this.style.background='#c0631f'" onmouseout="this.style.background='#D8722C'">&#8250;</button>
-                        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:calc(100vw - 10rem); max-width:900px; text-align:center; pointer-events:none;">
-                            <img id="cs-lightbox-img" src="" alt="" style="max-width:100%; max-height:80vh; width:auto; height:auto; border-radius:8px; object-fit:contain; box-shadow:0 30px 80px rgba(0,0,0,0.5); display:inline-block; pointer-events:auto;">
+                        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:calc(100% - 10rem); max-width:900px; text-align:center; pointer-events:none;">
+                            <img id="cs-lightbox-img" src="" alt="" style="max-width:100%; max-height:70vh; width:auto; height:auto; border-radius:8px; object-fit:contain; box-shadow:0 30px 80px rgba(0,0,0,0.5); display:inline-block; pointer-events:auto;">
                         </div>
                         <div id="cs-lightbox-dots" style="position:absolute; bottom:1.5rem; left:50%; transform:translateX(-50%); display:flex; gap:.6rem; z-index:9502;"></div>
                     </div>
@@ -362,13 +371,27 @@
                         var images = [
                             { src: 'photos/photo_strip.jpg', alt: 'Champions Summit 2025 — networking' },
                             { src: 'photos/photo_strip_3.jpg', alt: 'Champions Summit 2025 — CEO Fireside' },
-                            { src: 'photos/photo_strip_2.jpg', alt: 'Champions Summit 2025 — attendees in conversation' }
+                            { src: 'photos/photo_strip_2.jpg', alt: 'Champions Summit 2025 — attendees in conversation' },
+                            { src: 'photos/photo_strip_4.jpg', alt: 'Champions Summit 2025' },
+                            { src: 'photos/photo_strip_5.jpg', alt: 'Champions Summit 2025' },
+                            { src: 'photos/photo_strip_6.jpg', alt: 'Champions Summit 2025' }
                         ];
                         var current = 0;
 
                         window.csLightbox = function(index) {
                             current = index;
-                            document.getElementById('cs-lightbox').style.display = 'block';
+                            var lb = document.getElementById('cs-lightbox');
+
+                            // Find the video iframe and set overlay top to its top edge
+                            var videoEl = document.querySelector('iframe[src*="vimeo"]');
+                            if (videoEl) {
+                                var rect = videoEl.getBoundingClientRect();
+                                lb.style.top = Math.max(rect.top, 0) + 'px';
+                            } else {
+                                lb.style.top = '0';
+                            }
+
+                            lb.style.display = 'block';
                             csLightboxShow();
                             csLightboxDots();
                         };
