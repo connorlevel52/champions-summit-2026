@@ -34,6 +34,121 @@
         .sponsorship-card .sponsor-logo {
             margin-left: 0;
         }
+    
+        .footer-brand-row {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand-row img {
+            display: block;
+            object-fit: contain;
+        }
+
+        .footer-champions-logo {
+            max-height: 72px;
+            width: auto;
+        }
+
+        .footer-level52-logo {
+            max-height: 48px;
+            width: auto;
+            opacity: 0.95;
+        }
+
+        @media (max-width: 768px) {
+            .footer-brand-row {
+                gap: 1.5rem;
+            }
+
+            .footer-champions-logo {
+                max-height: 58px;
+            }
+
+            .footer-level52-logo {
+                max-height: 40px;
+            }
+        }
+
+    
+        .confirmed-sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.1rem;
+            align-items: stretch;
+        }
+
+        .confirmed-sponsor-card {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(145deg, rgba(255,255,255,0.11), rgba(255,255,255,0.045));
+            border: 1px solid rgba(255,255,255,0.16);
+            padding: 2rem 1.75rem;
+            border-radius: 14px;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.16);
+            text-align: center;
+        }
+
+        .confirmed-sponsor-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #D8722C;
+        }
+
+        .confirmed-sponsor-label {
+            font-family: 'Trebuchet MS', sans-serif;
+            color: #D8722C;
+            font-size: .68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .16em;
+            margin: 0 0 1rem;
+        }
+
+        .confirmed-sponsor-logo-wrap {
+            min-height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+
+        .confirmed-sponsor-logo {
+            display: block;
+            max-height: 82px;
+            max-width: 210px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .confirmed-sponsor-title {
+            color: #FFF;
+            font-size: 1.25rem;
+            margin: 0 0 .55rem;
+            line-height: 1.2;
+        }
+
+        .confirmed-sponsor-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 38px;
+            padding: .55rem .95rem;
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 999px;
+            color: #FFF;
+            text-decoration: none;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.06);
+        }
+
     </style>
 </head>
 <body>
@@ -735,6 +850,43 @@
                     </div>
                 </div>
 
+
+                <!-- CONFIRMED SPONSORS -->
+                <div style="max-width:1040px; margin:0 auto 4rem; text-align:center;">
+                    <p style="color:rgba(255,255,255,0.72); font-size:.78rem; text-transform:uppercase; letter-spacing:.28em; margin-bottom:.75rem;">Confirmed Sponsors</p>
+                    <h3 style="color:#FFF; font-size:1.65rem; margin:0 auto .75rem; max-width:720px;">The organizations backing key summit experiences.</h3>
+                    <p style="color:rgba(255,255,255,0.72); font-size:.98rem; line-height:1.7; max-width:680px; margin:0 auto 2rem;">These sponsors are supporting the leadership experiences that make Champions Summit more than a conference.</p>
+
+                    <div class="confirmed-sponsors-grid">
+                        <div class="confirmed-sponsor-card">
+                            <p class="confirmed-sponsor-label">Champions Pathway Sponsor</p>
+                            <a href="https://craigsenyk.com/" target="_blank" rel="noopener" class="confirmed-sponsor-logo-wrap" aria-label="Visit Craig Senyk Initiatives">
+                                <img src="logos/craig-senyk-initiatives.png" alt="Craig Senyk Initiatives logo" class="confirmed-sponsor-logo">
+                            </a>
+                            <h3 class="confirmed-sponsor-title">Craig Senyk Initiatives</h3>
+                            <a href="https://craigsenyk.com/" target="_blank" rel="noopener" class="confirmed-sponsor-link">Visit Website</a>
+                        </div>
+
+                        <div class="confirmed-sponsor-card">
+                            <p class="confirmed-sponsor-label">Leadership Simulation Sponsor</p>
+                            <a href="https://orennia.com/" target="_blank" rel="noopener" class="confirmed-sponsor-logo-wrap" aria-label="Visit Orennia">
+                                <img src="logos/orennia.png" alt="Orennia logo" class="confirmed-sponsor-logo">
+                            </a>
+                            <h3 class="confirmed-sponsor-title">Orennia</h3>
+                            <a href="https://orennia.com/" target="_blank" rel="noopener" class="confirmed-sponsor-link">Visit Website</a>
+                        </div>
+
+                        <div class="confirmed-sponsor-card">
+                            <p class="confirmed-sponsor-label">Mentor Café Sponsor</p>
+                            <a href="https://professionalexcavators.com/" target="_blank" rel="noopener" class="confirmed-sponsor-logo-wrap" aria-label="Visit Professional Excavators &amp; Construction">
+                                <img src="logos/peci.png" alt="Professional Excavators &amp; Construction logo" class="confirmed-sponsor-logo">
+                            </a>
+                            <h3 class="confirmed-sponsor-title">Professional Excavators &amp; Construction</h3>
+                            <a href="https://professionalexcavators.com/" target="_blank" rel="noopener" class="confirmed-sponsor-link">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- WHAT YOU'RE BUYING -->
                 <div style="max-width:920px; margin:0 auto 3.5rem;">
                     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem;">
@@ -774,17 +926,17 @@
                         <div style="background:rgba(255,255,255,0.08); padding:1.1rem 1.4rem; border-radius:6px; border:1px solid rgba(255,255,255,0.15);">
                             <p style="color:rgba(255,255,255,0.6); font-size:.65rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.3rem;">&#10003; Closed</p>
                             <p style="color:#FFF; font-size:1rem; font-weight:700; margin:0 0 .5rem;">Leadership Simulation</p>
-                            <p style="color:rgba(255,255,255,0.75); font-size:.85rem; margin:0 0 .6rem;">Sponsored by: Orennia<br><img src="logos/orennia.png" alt="Orennia logo" class="sponsor-logo"></p>
+                            <p style="color:rgba(255,255,255,0.75); font-size:.85rem; margin:0 0 .6rem;">Sponsored by: <a href="https://orennia.com/" target="_blank" rel="noopener" style="color:#FFF; text-decoration:underline;">Orennia</a></p>
                         </div>
                         <div style="background:rgba(255,255,255,0.08); padding:1.1rem 1.4rem; border-radius:6px; border:1px solid rgba(255,255,255,0.15);">
                             <p style="color:rgba(255,255,255,0.6); font-size:.65rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.3rem;">&#10003; Closed</p>
                             <p style="color:#FFF; font-size:1rem; font-weight:700; margin:0 0 .5rem;">Mentor Café</p>
-                            <p style="color:rgba(255,255,255,0.75); font-size:.85rem; margin:0 0 .6rem;">Sponsored by: PECI<br><img src="logos/peci.png" alt="PECI logo" class="sponsor-logo"></p>
+                            <p style="color:rgba(255,255,255,0.75); font-size:.85rem; margin:0 0 .6rem;">Sponsored by: <a href="https://professionalexcavators.com/" target="_blank" rel="noopener" style="color:#FFF; text-decoration:underline;">PECI</a></p>
                         </div>
                         <div style="background:rgba(255,255,255,0.08); padding:1.1rem 1.4rem; border-radius:6px; border:1px solid rgba(255,255,255,0.15);">
                             <p style="color:rgba(255,255,255,0.6); font-size:.65rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.3rem;">&#10003; Closed</p>
                             <p style="color:#FFF; font-size:1rem; font-weight:700; margin:0 0 .5rem;">Champions Pathway</p>
-                            <p style="color:rgba(255,255,255,0.75); font-size:.85rem; margin:0 0 .6rem;">Sponsored by: Craig Senyk Initiatives<br><img src="logos/craig-senyk-initiatives.png" alt="Craig Senyk Initiatives logo" class="sponsor-logo"></p>
+                            <p style="color:rgba(255,255,255,0.75); font-size:.85rem; margin:0 0 .6rem;">Sponsored by: <a href="https://craigsenyk.com/" target="_blank" rel="noopener" style="color:#FFF; text-decoration:underline;">Craig Senyk Initiatives</a></p>
                         </div>
                         <a href="mailto:jayson@level52.ca?subject=Champions%20Summit%202026%20%E2%80%94%20Champions%20Hour%20Sponsorship" style="background:#D8722C; padding:1.1rem 1.4rem; border-radius:6px; text-decoration:none; display:block; transition:background .2s;" onmouseover="this.style.background='#B85F1F'" onmouseout="this.style.background='#D8722C'">
                             <p style="color:rgba(255,255,255,0.85); font-size:.65rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.3rem;">Open · Claim</p>
