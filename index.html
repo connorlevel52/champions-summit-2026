@@ -304,13 +304,11 @@
         </section>
 
         <!-- ========================================================================
-             1c/1d. IS THIS ROOM FOR YOU + SEE THE ROOM
+             1c. IS THIS ROOM FOR YOU
         ========================================================================= -->
-        <section class="section section--white">
+        <section class="section--white" style="padding:3.5rem 0;">
             <div class="section-container fade-in">
-
-                <!-- IS THIS ROOM FOR YOU -->
-                <div style="max-width:780px; margin:0 auto 3.5rem; text-align:center;">
+                <div style="max-width:780px; margin:0 auto; text-align:center;">
                     <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C; margin-bottom:1.25rem; display:inline-block;">WHO THIS IS FOR</span>
                     <h2 style="color:#022F4A; font-size:clamp(1.8rem,3.5vw,2.75rem); margin-bottom:1.75rem;">Is This Room for You?</h2>
                     <p style="font-size:1.15rem; color:#4D4F52; line-height:1.8; margin-bottom:1.25rem;">You're not at the top yet — but you can see it from here. You've got the team, the title, and the trajectory. What you don't have is direct access to the unfiltered conversations happening at the next level.</p>
@@ -326,8 +324,14 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- SEE THE ROOM — VIDEO + PHOTO STRIP -->
+        <!-- ========================================================================
+             1d. SEE THE ROOM — VIDEO + PHOTO STRIP
+        ========================================================================= -->
+        <section class="section--white" style="padding:3.5rem 0;">
+            <div class="section-container fade-in">
                 <div style="max-width:900px; margin:0 auto;">
                     <div style="text-align:center; margin:0 auto 2.5rem; display:flex; flex-direction:column; align-items:center;">
                         <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C; margin-bottom:1.25rem;">CHAMPIONS SUMMIT 2025</span>
@@ -381,16 +385,9 @@
                         window.csLightbox = function(index) {
                             current = index;
                             var lb = document.getElementById('cs-lightbox');
-
-                            // Find the video iframe and set overlay top to its top edge
-                            var videoEl = document.querySelector('iframe[src*="vimeo"]');
-                            if (videoEl) {
-                                var rect = videoEl.getBoundingClientRect();
-                                lb.style.top = Math.max(rect.top, 0) + 'px';
-                            } else {
-                                lb.style.top = '0';
-                            }
-
+                            var section = lb.closest('section');
+                            var rect = section.getBoundingClientRect();
+                            lb.style.top = Math.max(rect.top, 0) + 'px';
                             lb.style.display = 'block';
                             csLightboxShow();
                             csLightboxDots();
