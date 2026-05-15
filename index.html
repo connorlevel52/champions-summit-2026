@@ -35,43 +35,7 @@
             margin-left: 0;
         }
     
-        .footer-brand-row {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .footer-brand-row img {
-            display: block;
-            object-fit: contain;
-        }
-
-        .footer-champions-logo {
-            max-height: 72px;
-            width: auto;
-        }
-
-        .footer-level52-logo {
-            max-height: 48px;
-            width: auto;
-            opacity: 0.95;
-        }
-
-        @media (max-width: 768px) {
-            .footer-brand-row {
-                gap: 1.5rem;
-            }
-
-            .footer-champions-logo {
-                max-height: 58px;
-            }
-
-            .footer-level52-logo {
-                max-height: 40px;
-            }
-        }
+        
 
     
         .confirmed-sponsors-grid {
@@ -147,6 +111,51 @@
             text-decoration: none;
             font-size: 1rem;
             background: rgba(255,255,255,0.06);
+        }
+
+    
+        .footer-brand-row {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            gap: 3rem !important;
+            flex-wrap: nowrap !important;
+            width: 100%;
+            margin: 0 0 2.5rem 0;
+        }
+
+        .footer-brand-row img {
+            display: block;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .footer-champions-logo {
+            height: 90px !important;
+            width: auto !important;
+            max-width: none !important;
+        }
+
+        .footer-level52-logo {
+            height: 52px !important;
+            width: auto !important;
+            max-width: none !important;
+            opacity: 0.95;
+        }
+
+        @media (max-width: 768px) {
+            .footer-brand-row {
+                gap: 1.5rem !important;
+            }
+
+            .footer-champions-logo {
+                height: 68px !important;
+            }
+
+            .footer-level52-logo {
+                height: 42px !important;
+            }
         }
 
     </style>
