@@ -35,9 +35,6 @@
             margin-left: 0;
         }
     
-        
-
-    
         .confirmed-sponsors-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -113,7 +110,7 @@
             background: rgba(255,255,255,0.06);
         }
 
-    
+        /* FOOTER BRAND LOCKUP */
         .footer-brand-row {
             display: flex !important;
             flex-direction: row !important;
@@ -148,69 +145,17 @@
             .footer-brand-row {
                 gap: 1.5rem !important;
             }
-
             .footer-champions-logo {
                 height: 44px !important;
             }
-
             .footer-level52-logo {
                 height: 100px !important;
             }
         }
-
-    
-        /* FOOTER BRAND LOCKUP START */
-        .footer-brand-row {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 2rem;
-            margin: 0 0 2rem 0;
-            padding: 0;
-            line-height: 1;
-        }
-
-        .footer-brand-row a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .footer-brand-row img {
-            display: block;
-            object-fit: contain;
-            width: auto;
-            max-width: none;
-        }
-
-        .footer-champions-logo {
-            height: 52px;
-        }
-
-        .footer-level52-logo {
-            height: 160px;
-        }
-
-        @media (max-width: 768px) {
-            .footer-brand-row {
-                gap: 1.25rem;
-                flex-wrap: wrap;
-            }
-
-            .footer-champions-logo {
-                height: 44px;
-            }
-
-            .footer-level52-logo {
-                height: 100px;
-            }
-        }
-        /* FOOTER BRAND LOCKUP END */
-
     </style>
 </head>
 <body>
-    <!-- NAVIGATION (lightweight — single page, anchor links) -->
+    <!-- NAVIGATION -->
     <nav class="main-nav">
         <div class="nav-container">
             <a href="#top" class="nav-brand" aria-label="Champions Summit Home">
@@ -226,7 +171,20 @@
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="site-navigation">
-                <li><a href="#the-room">The Room</a></li>
+                <li class="nav-has-dropdown">
+                    <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+                        The Room
+                        <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown" role="menu">
+                        <a href="#the-room" role="menuitem">The Room</a>
+                        <a href="#ceo-firesides" role="menuitem">2026 CEO Firesides</a>
+                        <a href="#the-format" role="menuitem">The Format</a>
+                        <a href="#mentor-cafe" role="menuitem">2026 Mentor Caf&eacute;</a>
+                    </div>
+                </li>
                 <li><a href="#agenda">Agenda</a></li>
                 <li><a href="#code">The Code</a></li>
                 <li><a href="#partners">Partners</a></li>
@@ -256,7 +214,6 @@
                 <h1>Calgary's Most Curated Room of Rising Executive Leaders.</h1>
                 <p style="font-size:1.25rem; line-height:1.6; margin-bottom:.75rem;">Two days that close the gap to the executive suite.</p>
 
-                <!-- Confirmed CEO ticker — the load-bearing proof -->
                 <div class="hero-ceo-card" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); padding:1.25rem 1.5rem; border-radius:6px; max-width:820px; margin:0 auto 2rem; text-align:center;">
                     <p class="ceo-firesides-label" style="font-family:'Trebuchet MS',sans-serif; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.22em; color:#D8722C; margin-bottom:.6rem; text-align:center;">2026 CEO Firesides — Confirmed</p>
                     <p class="hero-ceo-speakers" style="color:#FFF; font-size:1rem; line-height:1.6; margin:0 auto; text-align:center; max-width:760px;">
@@ -278,7 +235,7 @@
         </section>
 
         <!-- ========================================================================
-             1b. STAT BAND — skim-friendly proof immediately below hero
+             1b. STAT BAND
         ========================================================================= -->
         <section style="background:#022F4A; border-top:1px solid rgba(255,255,255,0.08); padding:2rem 0;">
             <div class="container fade-in">
@@ -443,7 +400,6 @@
                     })();
                     </script>
                 </div>
-
             </div>
         </section>
 
@@ -460,7 +416,7 @@
         </section>
 
         <!-- ========================================================================
-             3. THE ROOM — 2026 confirmed speakers + format + 2025 alumni
+             3. THE ROOM
         ========================================================================= -->
         <section class="section section--white" id="the-room">
             <div class="section-container">
@@ -475,7 +431,7 @@
                 </div>
 
                 <!-- 2026 CONFIRMED CEO FIRESIDES — full cards -->
-                <div class="fade-in" style="max-width:1100px; margin:0 auto 4rem;">
+                <div id="ceo-firesides" class="fade-in" style="max-width:1100px; margin:0 auto 4rem;">
                     <div style="text-align:center; margin-bottom:2.5rem;">
                         <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C;">2026 CEO FIRESIDES — CONFIRMED</span>
                         <h3 style="margin-top:1rem; font-size:1.6rem;">The CEOs unscripted. On the record.</h3>
@@ -485,7 +441,6 @@
                         <!-- Mark Little -->
                         <div style="background:#FFF; padding:2rem; border-left:4px solid #D8722C; border-radius:6px; box-shadow:0 2px 12px rgba(2,47,74,0.08);">
                             <div style="width:72px; height:72px; border-radius:50%; background:#E8EDF2; margin-bottom:1rem; overflow:hidden; display:flex; align-items:center; justify-content:center;">
-                                <!-- Replace src with actual photo when available -->
                                 <img src="photos/mark-little.jpg" alt="Mark Little" style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:Trebuchet MS,sans-serif; font-size:1.4rem; font-weight:700; color:#022F4A;\'>ML</span>';">
                             </div>
                             <h4 style="font-size:1.35rem; color:#022F4A; margin-bottom:.4rem;">Mark Little</h4>
@@ -520,8 +475,8 @@
                     <p style="text-align:center; margin-top:2rem; color:#67696C; font-size:.95rem;"><em>Plus an additional CEO Fireside, Diary of a COO and CFO panels, and 20+ Mentor Café leaders to be announced.</em></p>
                 </div>
 
-                <!-- 4 FORMAT CARDS — what you'll experience -->
-                <div class="fade-in" style="text-align:center; margin-bottom:2rem;">
+                <!-- 4 FORMAT CARDS -->
+                <div id="the-format" class="fade-in" style="text-align:center; margin-bottom:2rem;">
                     <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C; margin-bottom:1.25rem; display:inline-block;">THE FORMAT</span>
                     <h3 style="text-align:center; font-size:1.6rem; margin-bottom:.75rem;">What You'll Experience</h3>
                     <p style="max-width:700px; margin:0 auto; color:#4D4F52; font-size:1.05rem; line-height:1.8;">Champions Summit isn't a conference. It's a working session with the leaders you're working to become.</p>
@@ -551,7 +506,7 @@
                 </div>
 
                 <!-- 2026 MENTOR CAFÉ — CONFIRMED -->
-                <div class="fade-in" style="max-width:1100px; margin:5rem auto 0;">
+                <div id="mentor-cafe" class="fade-in" style="max-width:1100px; margin:5rem auto 0;">
                     <div style="text-align:center; margin-bottom:2rem;">
                         <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C;">2026 MENTOR CAFÉ — CONFIRMED</span>
                         <h3 style="margin-top:1rem; font-size:1.6rem;">The mentors at your table.</h3>
@@ -708,96 +663,45 @@
                     1.5 days. Anchor sessions across afternoon, evening, and full day two. The Leadership Simulation threads across both days. Champions Hour closes it out.
                 </p>
 
-                <!-- AGENDA PHOTO -->
                 <div class="fade-in" style="max-width:800px; margin:0 auto 3rem; border-radius:8px; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.25);">
                     <img src="photos/agenda.jpg" alt="Champions Summit 2025 — presenter on stage" style="width:100%; display:block; object-fit:cover; max-height:420px;">
                 </div>
 
                 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem; max-width:1000px; margin:0 auto;">
-
-                    <!-- Day 1 -->
                     <div style="background:rgba(255,255,255,0.05); padding:2.25rem; border-left:4px solid #D8722C; border-radius:6px;">
                         <p style="font-family:'Trebuchet MS',sans-serif; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.2em; color:#D8722C; margin-bottom:.5rem;">Day 1</p>
                         <h3 style="font-size:1.25rem; margin-bottom:.25rem; color:#FFF;">Monday, October 26</h3>
                         <p style="color:#FFF; font-size:.9rem; margin-bottom:1.5rem; opacity:.85;">Afternoon &amp; Evening · 12:30 PM – 8:00 PM</p>
-
                         <ul style="list-style:none; padding:0; margin:0;">
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;">
-                                <span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">12:30 PM</span>
-                                <span style="color:#FFF; line-height:1.5;">Registration</span>
-                            </li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;">
-                                <span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">1:00 PM</span>
-                                <span style="color:#FFF; line-height:1.5;">Welcome &amp; Leadership Simulation begins</span>
-                            </li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;">
-                                <span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">2:00 PM</span>
-                                <span style="color:#FFF; line-height:1.5;">CEO Fireside Conversation</span>
-                            </li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;">
-                                <span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">4:15 PM</span>
-                                <span style="color:#FFF; line-height:1.5;">Diary of a COO Panel</span>
-                            </li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;">
-                                <span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">5:15 PM</span>
-                                <span style="color:#FFF; line-height:1.5;">Dinner &amp; Networking</span>
-                            </li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;">
-                                <span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">6:15 PM</span>
-                                <span style="color:#FFF; line-height:1.5;">CEO Fireside Conversation</span>
-                            </li>
-                            <li style="padding:.8rem 0; display:flex; gap:1rem;">
-                                <span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">7:00 PM</span>
-                                <span style="color:#FFF; line-height:1.5;">Cocktail Reception</span>
-                            </li>
+                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">12:30 PM</span><span style="color:#FFF; line-height:1.5;">Registration</span></li>
+                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">1:00 PM</span><span style="color:#FFF; line-height:1.5;">Welcome &amp; Leadership Simulation begins</span></li>
+                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">2:00 PM</span><span style="color:#FFF; line-height:1.5;">CEO Fireside Conversation</span></li>
+                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">4:15 PM</span><span style="color:#FFF; line-height:1.5;">Diary of a COO Panel</span></li>
+                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">5:15 PM</span><span style="color:#FFF; line-height:1.5;">Dinner &amp; Networking</span></li>
+                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">6:15 PM</span><span style="color:#FFF; line-height:1.5;">CEO Fireside Conversation</span></li>
+                            <li style="padding:.8rem 0; display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">7:00 PM</span><span style="color:#FFF; line-height:1.5;">Cocktail Reception</span></li>
                         </ul>
                     </div>
-
-                    <!-- Day 2 -->
                     <div style="background:rgba(255,255,255,0.05); padding:2.25rem; border-left:4px solid #D8722C; border-radius:6px;">
                         <p style="font-family:'Trebuchet MS',sans-serif; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.2em; color:#D8722C; margin-bottom:.5rem;">Day 2</p>
                         <h3 style="font-size:1.25rem; margin-bottom:.25rem; color:#FFF;">Tuesday, October 27</h3>
                         <p style="color:#FFF; font-size:.9rem; margin-bottom:1.5rem; opacity:.85;">Full Day · 7:30 AM – 4:30 PM</p>
-
                         <ul style="list-style:none; padding:0; margin:0;">
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;">
-                                <span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">7:30 AM</span>
-                                <span style="color:#FFF; line-height:1.5;">Mentor Café</span>
-                            </li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;">
-                                <span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">9:15 AM</span>
-                                <span style="color:#FFF; line-height:1.5;">Leadership Simulation continues</span>
-                            </li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;">
-                                <span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">10:30 AM</span>
-                                <span style="color:#FFF; line-height:1.5;">CEO Fireside Conversation</span>
-                            </li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;">
-                                <span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">1:00 PM</span>
-                                <span style="color:#FFF; line-height:1.5;">Diary of a CFO Panel</span>
-                            </li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;">
-                                <span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">2:30 PM</span>
-                                <span style="color:#FFF; line-height:1.5;">Simulation Final Act</span>
-                            </li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;">
-                                <span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">3:00 PM</span>
-                                <span style="color:#FFF; line-height:1.5;">Closing CEO Fireside</span>
-                            </li>
-                            <li style="padding:.8rem 0; display:flex; gap:1rem;">
-                                <span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">4:30 PM</span>
-                                <span style="color:#FFF; line-height:1.5;">Champions Hour Cocktails</span>
-                            </li>
+                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">7:30 AM</span><span style="color:#FFF; line-height:1.5;">Mentor Café</span></li>
+                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">9:15 AM</span><span style="color:#FFF; line-height:1.5;">Leadership Simulation continues</span></li>
+                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">10:30 AM</span><span style="color:#FFF; line-height:1.5;">CEO Fireside Conversation</span></li>
+                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">1:00 PM</span><span style="color:#FFF; line-height:1.5;">Diary of a CFO Panel</span></li>
+                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">2:30 PM</span><span style="color:#FFF; line-height:1.5;">Simulation Final Act</span></li>
+                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">3:00 PM</span><span style="color:#FFF; line-height:1.5;">Closing CEO Fireside</span></li>
+                            <li style="padding:.8rem 0; display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">4:30 PM</span><span style="color:#FFF; line-height:1.5;">Champions Hour Cocktails</span></li>
                         </ul>
                     </div>
-
                 </div>
 
                 <p style="text-align:center; margin-top:2.5rem; color:#FFF; font-style:italic; font-size:.95rem;">
                     Venue: Hudson, 200 - 8 Avenue SW, 6th Floor, Calgary. Specific session times subject to minor changes.
                 </p>
 
-                <!-- Mid-page scarcity + CTA -->
                 <div style="max-width:780px; margin:3rem auto 0; padding:2.25rem; background:rgba(216,114,44,0.12); border:1px solid rgba(216,114,44,0.4); border-radius:8px; text-align:center;">
                     <p style="color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.22em; margin-bottom:1rem;">Capacity Capped at 150</p>
                     <p style="color:#FFF; font-size:1.15rem; line-height:1.6; margin-bottom:1.5rem;">Returning participants and nominated peers receive priority review. This room will sell out — apply now.</p>
@@ -822,7 +726,6 @@
             <div class="container fade-in">
                 <h2 style="text-align:center; margin-bottom:.5rem;">Who This Room Is For</h2>
                 <p style="text-align:center; color:#67696C; font-size:1.05rem; max-width:700px; margin:0 auto 3rem;">Champions Summit is application-only. The room of 150 is curated so every conversation counts.</p>
-
                 <div class="info-columns">
                     <div class="info-column">
                         <h3 class="info-heading">Who This Is For</h3>
@@ -834,7 +737,6 @@
                             <li>Returning Champions Summit alumni and peers nominated by them</li>
                         </ul>
                     </div>
-
                     <div class="info-column">
                         <h3 class="info-heading">Who This Is Not For</h3>
                         <ul class="info-list">
@@ -849,7 +751,7 @@
         </section>
 
         <!-- ========================================================================
-             5. THE CHAMPIONS CODE (compressed)
+             5. THE CHAMPIONS CODE
         ========================================================================= -->
         <section style="background:#022F4A; color:#FFF; padding:5rem 0;" id="code">
             <div class="container fade-in">
@@ -860,33 +762,15 @@
                         Champions Summit exists to forge a community of current and future executives committed to <strong style="color:#FFF;">responsibility over status</strong>, <strong style="color:#FFF;">contribution over consumption</strong>, and <strong style="color:#FFF;">long-term impact over short-term wins</strong> — for Calgary and beyond.
                     </p>
                 </div>
-
-                <!-- Five standards as compressed bold lines -->
                 <div style="max-width:780px; margin:3.5rem auto 0;">
                     <ul style="list-style:none; padding:0;">
-                        <li style="color:#FFF; padding:1.1rem 0 1.1rem 3rem; border-bottom:1px solid rgba(255,255,255,0.12); position:relative; line-height:1.6; font-size:1.1rem;">
-                            <span style="position:absolute; left:0; color:#D8722C; font-weight:700; font-family:'Trebuchet MS',sans-serif; font-size:.85rem; letter-spacing:.15em;">01</span>
-                            <strong>We choose responsibility over status.</strong>
-                        </li>
-                        <li style="color:#FFF; padding:1.1rem 0 1.1rem 3rem; border-bottom:1px solid rgba(255,255,255,0.12); position:relative; line-height:1.6; font-size:1.1rem;">
-                            <span style="position:absolute; left:0; color:#D8722C; font-weight:700; font-family:'Trebuchet MS',sans-serif; font-size:.85rem; letter-spacing:.15em;">02</span>
-                            <strong>We speak what matters, not what's safe.</strong>
-                        </li>
-                        <li style="color:#FFF; padding:1.1rem 0 1.1rem 3rem; border-bottom:1px solid rgba(255,255,255,0.12); position:relative; line-height:1.6; font-size:1.1rem;">
-                            <span style="position:absolute; left:0; color:#D8722C; font-weight:700; font-family:'Trebuchet MS',sans-serif; font-size:.85rem; letter-spacing:.15em;">03</span>
-                            <strong>We contribute before we consume.</strong>
-                        </li>
-                        <li style="color:#FFF; padding:1.1rem 0 1.1rem 3rem; border-bottom:1px solid rgba(255,255,255,0.12); position:relative; line-height:1.6; font-size:1.1rem;">
-                            <span style="position:absolute; left:0; color:#D8722C; font-weight:700; font-family:'Trebuchet MS',sans-serif; font-size:.85rem; letter-spacing:.15em;">04</span>
-                            <strong>We build beyond ourselves.</strong>
-                        </li>
-                        <li style="color:#FFF; padding:1.1rem 0 1.1rem 3rem; position:relative; line-height:1.6; font-size:1.1rem;">
-                            <span style="position:absolute; left:0; color:#D8722C; font-weight:700; font-family:'Trebuchet MS',sans-serif; font-size:.85rem; letter-spacing:.15em;">05</span>
-                            <strong>We play the long game.</strong>
-                        </li>
+                        <li style="color:#FFF; padding:1.1rem 0 1.1rem 3rem; border-bottom:1px solid rgba(255,255,255,0.12); position:relative; line-height:1.6; font-size:1.1rem;"><span style="position:absolute; left:0; color:#D8722C; font-weight:700; font-family:'Trebuchet MS',sans-serif; font-size:.85rem; letter-spacing:.15em;">01</span><strong>We choose responsibility over status.</strong></li>
+                        <li style="color:#FFF; padding:1.1rem 0 1.1rem 3rem; border-bottom:1px solid rgba(255,255,255,0.12); position:relative; line-height:1.6; font-size:1.1rem;"><span style="position:absolute; left:0; color:#D8722C; font-weight:700; font-family:'Trebuchet MS',sans-serif; font-size:.85rem; letter-spacing:.15em;">02</span><strong>We speak what matters, not what's safe.</strong></li>
+                        <li style="color:#FFF; padding:1.1rem 0 1.1rem 3rem; border-bottom:1px solid rgba(255,255,255,0.12); position:relative; line-height:1.6; font-size:1.1rem;"><span style="position:absolute; left:0; color:#D8722C; font-weight:700; font-family:'Trebuchet MS',sans-serif; font-size:.85rem; letter-spacing:.15em;">03</span><strong>We contribute before we consume.</strong></li>
+                        <li style="color:#FFF; padding:1.1rem 0 1.1rem 3rem; border-bottom:1px solid rgba(255,255,255,0.12); position:relative; line-height:1.6; font-size:1.1rem;"><span style="position:absolute; left:0; color:#D8722C; font-weight:700; font-family:'Trebuchet MS',sans-serif; font-size:.85rem; letter-spacing:.15em;">04</span><strong>We build beyond ourselves.</strong></li>
+                        <li style="color:#FFF; padding:1.1rem 0 1.1rem 3rem; position:relative; line-height:1.6; font-size:1.1rem;"><span style="position:absolute; left:0; color:#D8722C; font-weight:700; font-family:'Trebuchet MS',sans-serif; font-size:.85rem; letter-spacing:.15em;">05</span><strong>We play the long game.</strong></li>
                     </ul>
                 </div>
-
                 <p style="text-align:center; max-width:600px; margin:3rem auto 0; color:#FFF; font-style:italic; font-size:1.15rem; line-height:1.8; font-weight:600;">
                     How we lead in this room is how we lead everywhere.
                 </p>
@@ -894,7 +778,7 @@
         </section>
 
         <!-- ========================================================================
-             6. FINAL CTA / CLOSER
+             6. FINAL CTA
         ========================================================================= -->
         <section class="section section--white" id="apply" style="padding:5rem 0;">
             <div class="container fade-in">
@@ -902,7 +786,6 @@
                     <h2 style="font-size:clamp(1.8rem,3.5vw,2.75rem); color:#022F4A; margin-bottom:1.25rem;">Two Days. 150 Seats. One Decision.</h2>
                     <p style="font-size:1.2rem; color:#4D4F52; line-height:1.8; margin-bottom:.75rem;">Most executives spend a decade trying to break into the rooms Champions Summit puts you in for two days.</p>
                     <p style="font-size:1.1rem; color:#022F4A; font-weight:700; line-height:1.7; margin-bottom:2.5rem;">Apply for your seat. Or send the leaders you're developing.</p>
-
                     <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; align-items:flex-start; margin-bottom:1.5rem;">
                         <div style="display:flex; flex-direction:column; align-items:center; gap:.4rem;">
                             <a href="https://level52.typeform.com/cs2026-app?typeform-source=www.google.com" target="_blank" rel="noopener noreferrer" class="btn-primary btn-large">Apply for a Seat</a>
@@ -913,7 +796,6 @@
                             <p style="font-size:.72rem; color:#67696C; margin:0; font-style:italic;">High-potential team? Inquire here.</p>
                         </div>
                     </div>
-
                     <p style="color:#67696C; font-size:.9rem; margin-bottom:.5rem;"><em>$1,499 per seat. Invoiced upon acceptance. Applications reviewed on a rolling basis.</em></p>
                     <p style="color:#67696C; font-size:.95rem;">Questions? Contact Jayson Krause — <a href="mailto:jayson@level52.ca" style="color:#D8722C;">jayson@level52.ca</a></p>
                 </div>
@@ -930,14 +812,12 @@
                     <h2 style="color:#FFF;">Trusted By</h2>
                 </div>
 
-                <!-- TITLE SPONSOR CARD — hidden until activated. See SPONSOR-ACTIVATION.md -->
                 <div class="title-sponsor-card" data-sponsor="open" style="max-width:820px; margin:0 auto 3rem;">
                     <span class="ts-label">2026 Title Sponsor</span>
                     <h3 class="ts-name">{{TITLE_SPONSOR}}</h3>
                     <p class="ts-tagline">{{TITLE_SPONSOR_TAGLINE}}</p>
                 </div>
 
-                <!-- TITLE SPONSOR PLACEHOLDER — visible while position is open -->
                 <div style="max-width:820px; margin:0 auto 3rem;">
                     <div class="title-sponsor-placeholder" style="background:#FFF; border:3px dashed #D8722C; padding:3rem 2rem; border-radius:12px; text-align:center; position:relative; color:#022F4A;">
                         <span style="display:inline-block; background:#D8722C; color:#FFF; font-family:'Trebuchet MS',sans-serif; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.22em; padding:.45rem 1rem; border-radius:4px; margin-bottom:1.25rem;">2026 TITLE SPONSOR · OPEN</span>
@@ -1001,17 +881,14 @@
                             </p>
                             <a href="https://www.classroomchampions.org/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:38px; padding:.55rem .95rem; border:1px solid rgba(255,255,255,0.18); border-radius:999px; color:#FFF; text-decoration:none; font-size:1rem; background:rgba(255,255,255,0.06);">Classroom Champions</a>
                         </div>
-
                     </div>
                 </div>
-
 
                 <!-- CONFIRMED SPONSORS -->
                 <div style="max-width:1040px; margin:0 auto 4rem; text-align:center;">
                     <p style="color:rgba(255,255,255,0.72); font-size:.78rem; text-transform:uppercase; letter-spacing:.28em; margin-bottom:.75rem;">Confirmed Sponsors</p>
                     <h3 style="color:#FFF; font-size:1.65rem; margin:0 auto .75rem; max-width:720px;">The organizations backing key summit experiences.</h3>
                     <p style="color:rgba(255,255,255,0.72); font-size:.98rem; line-height:1.7; max-width:680px; margin:0 auto 2rem;">These sponsors are supporting the leadership experiences that make Champions Summit more than a conference.</p>
-
                     <div class="confirmed-sponsors-grid">
                         <div class="confirmed-sponsor-card">
                             <p class="confirmed-sponsor-label">Champions Pathway Sponsor</p>
@@ -1020,7 +897,6 @@
                             </a>
                             <h3 class="confirmed-sponsor-title">Craig Senyk Initiatives</h3>
                         </div>
-
                         <div class="confirmed-sponsor-card">
                             <p class="confirmed-sponsor-label">Leadership Simulation Sponsor</p>
                             <a href="https://orennia.com/" target="_blank" rel="noopener" class="confirmed-sponsor-logo-wrap" aria-label="Visit Orennia">
@@ -1028,7 +904,6 @@
                             </a>
                             <h3 class="confirmed-sponsor-title">Orennia</h3>
                         </div>
-
                         <div class="confirmed-sponsor-card">
                             <p class="confirmed-sponsor-label">Mentor Café Sponsor</p>
                             <a href="https://professionalexcavators.com/" target="_blank" rel="noopener" class="confirmed-sponsor-logo-wrap" aria-label="Visit Professional Excavators &amp; Construction">
@@ -1061,7 +936,6 @@
                 <div style="max-width:920px; margin:0 auto;">
                     <h3 style="color:#FFF; text-align:center; font-size:1.3rem; margin-bottom:.6rem; text-transform:uppercase; letter-spacing:.1em;">2026 Sponsorship Opportunities</h3>
                     <p style="color:rgba(255,255,255,0.7); text-align:center; margin-bottom:2rem; font-size:.95rem;">All packages are exclusive — one sponsor per opportunity. First-come, first-confirmed.</p>
-
                     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:.85rem;">
                         <a href="mailto:jayson@level52.ca?subject=Champions%20Summit%202026%20%E2%80%94%20Diary%20of%20a%20CFO%20Sponsorship" style="background:#D8722C; padding:1.1rem 1.4rem; border-radius:6px; text-decoration:none; display:block; transition:background .2s;" onmouseover="this.style.background='#B85F1F'" onmouseout="this.style.background='#D8722C'">
                             <p style="color:rgba(255,255,255,0.85); font-size:.65rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.3rem;">Open · Claim</p>
@@ -1095,7 +969,6 @@
                             <p style="color:#FFF; font-size:1rem; font-weight:700; margin:0;">Champions Hour</p>
                         </a>
                     </div>
-
                     <div style="text-align:center; margin-top:2.5rem;">
                         <a href="Champions-Summit-2026-Sponsorship-Package.pdf" target="_blank" rel="noopener" class="btn-primary btn-large" style="margin-right:.75rem; margin-bottom:1rem;">Download Sponsorship Package</a>
                         <a href="mailto:jayson@level52.ca?subject=Champions%20Summit%202026%20%E2%80%94%20Sponsorship%20Inquiry" class="btn-secondary btn-large" style="border:2px solid #FFF; color:#FFF;">Inquire Directly</a>
@@ -1106,9 +979,7 @@
 
     </main>
 
-    <!-- ========================================================================
-         FOOTER
-    ========================================================================= -->
+    <!-- FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-content">
