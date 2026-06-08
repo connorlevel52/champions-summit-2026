@@ -66,6 +66,151 @@ p  { margin-bottom: 1.25rem; line-height: 1.8; }
 .nav-toggle.active span:nth-child(2) { opacity: 0; }
 .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
+/* Desktop + mobile dropdown navigation */
+[id] {
+  scroll-margin-top: 110px;
+}
+
+.nav-has-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  color: rgba(255,255,255,.8);
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
+  font-size: .9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  line-height: 1;
+}
+
+.nav-dropdown-trigger:hover,
+.nav-has-dropdown:hover > .nav-dropdown-trigger {
+  color: #D8722C;
+}
+
+.nav-dropdown-icon {
+  display: inline-block;
+  width: .45rem;
+  height: .45rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform .25s ease;
+}
+
+.nav-dropdown {
+  z-index: 1001;
+}
+
+.nav-dropdown a {
+  font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  line-height: 1.45;
+}
+
+@media (min-width: 769px) {
+  .nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    min-width: 320px;
+    padding: .75rem 0;
+    background: #022F4A;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 12px;
+    box-shadow: 0 18px 45px rgba(0,0,0,.28);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(12px);
+    transition: opacity .2s ease, visibility .2s ease, transform .2s ease;
+  }
+
+  .nav-dropdown a {
+    display: block;
+    padding: 1rem 1.75rem;
+    color: rgba(255,255,255,.84);
+    white-space: nowrap;
+  }
+
+  .nav-dropdown a:hover {
+    color: #FFF;
+    background: rgba(255,255,255,.08);
+  }
+
+  .nav-has-dropdown:hover .nav-dropdown,
+  .nav-has-dropdown:focus-within .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .nav-has-dropdown:hover .nav-dropdown-icon,
+  .nav-has-dropdown:focus-within .nav-dropdown-icon {
+    transform: rotate(225deg) translate(-1px, -1px);
+  }
+}
+
+@media (max-width: 768px) {
+  [id] {
+    scroll-margin-top: 95px;
+  }
+
+  .nav-has-dropdown {
+    width: 100%;
+  }
+
+  .nav-dropdown-trigger {
+    width: 100%;
+    justify-content: space-between;
+    padding: .25rem 0;
+  }
+
+  .nav-dropdown {
+    position: static;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: .4rem;
+    padding: 0;
+    background: rgba(255,255,255,.045);
+    border: 0;
+    border-radius: 10px;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: max-height .3s ease, padding .3s ease;
+  }
+
+  .nav-has-dropdown.nav-open .nav-dropdown {
+    max-height: 320px;
+    padding: .55rem 0;
+  }
+
+  .nav-has-dropdown.nav-open .nav-dropdown-icon {
+    transform: rotate(225deg) translate(-1px, -1px);
+  }
+
+  .nav-dropdown a {
+    display: block;
+    padding: .85rem 1.25rem;
+    color: rgba(255,255,255,.78);
+    font-size: .85rem;
+    white-space: normal;
+  }
+
+  .nav-dropdown a:hover {
+    color: #FFF;
+    background: rgba(255,255,255,.06);
+  }
+}
+
+
 /* =====================================================
    5. HERO SECTIONS
    ===================================================== */
