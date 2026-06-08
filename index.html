@@ -172,14 +172,10 @@
             </button>
             <ul class="nav-links" id="site-navigation">
                 <li class="nav-has-dropdown">
-                    <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+                    <a href="#the-room" class="nav-dropdown-trigger">
                         The Room
-                        <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
+                    </a>
                     <div class="nav-dropdown" role="menu">
-                        <a href="#the-room" role="menuitem">The Room</a>
                         <a href="#ceo-firesides" role="menuitem">2026 CEO Firesides</a>
                         <a href="#the-format" role="menuitem">The Format</a>
                         <a href="#mentor-cafe" role="menuitem">2026 Mentor Caf&eacute;</a>
@@ -1019,5 +1015,19 @@
     </footer>
 
     <script src="main.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+document.querySelectorAll('.nav-dropdown-trigger').forEach(function(trigger){
+trigger.addEventListener('click',function(e){
+if(window.innerWidth<=768){
+e.preventDefault();
+this.parentElement.classList.toggle('nav-open');
+}
+});
+});
+});
+</script>
+
 </body>
 </html>
