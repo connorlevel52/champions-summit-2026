@@ -1,4 +1,3 @@
-```javascript
 /**
  * Champions Summit 2026 — Main JavaScript
  * Handles mobile navigation, same-page anchor scrolling, nav state, and fade-in animations.
@@ -64,15 +63,12 @@
       var target = document.querySelector(hash);
       if (!target) return;
 
-      // Find the fade-in container inside the target section
       var fadeEl = target.querySelector('.fade-in, .fade-in--visible');
       if (!fadeEl) return;
 
-      // Reset the animation
       fadeEl.classList.remove('fade-in--visible');
       fadeEl.classList.add('fade-in');
 
-      // Re-trigger after a short delay to let the scroll start
       setTimeout(function () {
         fadeEl.classList.add('fade-in--visible');
       }, 400);
@@ -118,22 +114,34 @@
     });
   });
 
+  // ── FADE-IN ON SCROLL ──
+  // Runs after DOM is ready to catch all .fade-in elements.
+  function initFadeObserver() {
+    var fadeElements = document.querySelectorAll('.fade-in');
+    if (fadeElements.length === 0) return;
 
-  const fadeElements = document.querySelectorAll('.fade-in');
-  if (fadeElements.length > 0 && 'IntersectionObserver' in window) {
-    const fadeObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in--visible');
-          fadeObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    if ('IntersectionObserver' in window) {
+      var fadeObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in--visible');
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-    fadeElements.forEach(function (el) { fadeObserver.observe(el); });
-  } else {
-    fadeElements.forEach(function (el) { el.classList.add('fade-in--visible'); });
+      fadeElements.forEach(function (el) { fadeObserver.observe(el); });
+    } else {
+      fadeElements.forEach(function (el) { el.classList.add('fade-in--visible'); });
+    }
   }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFadeObserver);
+  } else {
+    initFadeObserver();
+  }
+
 })();
 
 // ── PAGE LOAD ENTRANCE ANIMATIONS ──
@@ -197,7 +205,7 @@
 })();
 
 // ── APPLY POPUP ──
-// Triggers 45 seconds after page load.
+// Triggers 45 seconds after page load OR on exit intent (mouse leaving viewport top).
 // Shows once per device using localStorage (persists across sessions).
 (function () {
   var STORAGE_KEY = 'cs2026_popup_seen';
@@ -289,4 +297,3 @@
 
   setTimeout(showPopup, 45000);
 })();
-```
