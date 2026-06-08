@@ -1,3 +1,4 @@
+```javascript
 /**
  * Champions Summit 2026 — Main JavaScript
  * Handles mobile navigation, same-page anchor scrolling, nav state, and fade-in animations.
@@ -196,11 +197,11 @@
 })();
 
 // ── APPLY POPUP ──
-// Triggers on exit intent (mouse leaving viewport top) OR after 10 seconds.
-// Shows once per session using sessionStorage.
+// Triggers 45 seconds after page load.
+// Shows once per device using localStorage (persists across sessions).
 (function () {
   var STORAGE_KEY = 'cs2026_popup_seen';
-  if (sessionStorage.getItem(STORAGE_KEY)) return;
+  if (localStorage.getItem(STORAGE_KEY)) return;
 
   var hasShown = false;
 
@@ -278,7 +279,7 @@
   function showPopup() {
     if (hasShown) return;
     hasShown = true;
-    sessionStorage.setItem(STORAGE_KEY, '1');
+    localStorage.setItem(STORAGE_KEY, '1');
     buildPopup();
   }
 
@@ -286,5 +287,6 @@
     if (e.clientY <= 0) showPopup();
   });
 
-  setTimeout(showPopup, 10000);
+  setTimeout(showPopup, 45000);
 })();
+```
