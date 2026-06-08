@@ -1020,6 +1020,24 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+
+    var roomDropdownTrigger = document.querySelector('.nav-dropdown-trigger');
+    if (roomDropdownTrigger) {
+        roomDropdownTrigger.addEventListener('click', function (e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+
+                var item = this.closest('.nav-has-dropdown');
+                if (!item) return;
+
+                var isOpen = item.classList.toggle('nav-open');
+                this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            }
+        }, true);
+    }
+
     var navToggle = document.querySelector('.nav-toggle');
     var navLinks = document.querySelector('.nav-links');
     var dropdownItems = document.querySelectorAll('.nav-has-dropdown');
@@ -1029,17 +1047,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var dropdownLinks = item.querySelectorAll('.nav-dropdown a');
 
         if (!trigger) return;
-
-        trigger.addEventListener('click', function (e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-
-                var isOpen = item.classList.toggle('nav-open');
-                trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            }
-        });
-
-        dropdownLinks.forEach(function (link) {
+dropdownLinks.forEach(function (link) {
             link.addEventListener('click', function () {
                 if (window.innerWidth <= 768) {
                     item.classList.remove('nav-open');
