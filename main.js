@@ -249,7 +249,7 @@
           '<p style="color:rgba(255,255,255,0.5);font-size:.72rem;margin:0;font-family:\'Trebuchet MS\',sans-serif;letter-spacing:.04em;">Rolling review. Only 150 seats.</p>',
         '</div>',
         '<div style="display:flex;flex-direction:column;align-items:center;gap:.3rem;">',
-          '<a href="mailto:jayson@level52.ca?subject=Table%20Inquiry%20%E2%80%94%20Champions%20Summit%202026" style="display:inline-block;background:transparent;color:#FFF;font-family:\'Trebuchet MS\',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.9rem 2rem;border-radius:4px;border:2px solid rgba(255,255,255,0.4);text-decoration:none;min-width:220px;" onmouseover="this.style.borderColor=\'#D8722C\';this.style.color=\'#D8722C\'" onmouseout="this.style.borderColor=\'rgba(255,255,255,0.4)\';this.style.color=\'#FFF\'">Reserve Your Table</a>',
+          '<a href="mailto:jayson@level52.ca?subject=Group%20Booking%20Inquiry%20%E2%80%94%20Champions%20Summit%202026" style="display:inline-block;background:transparent;color:#FFF;font-family:\'Trebuchet MS\',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.9rem 2rem;border-radius:4px;border:2px solid rgba(255,255,255,0.4);text-decoration:none;min-width:220px;" onmouseover="this.style.borderColor=\'#D8722C\';this.style.color=\'#D8722C\'" onmouseout="this.style.borderColor=\'rgba(255,255,255,0.4)\';this.style.color=\'#FFF\'">Contact us for group bookings</a>',
           '<p style="color:rgba(255,255,255,0.5);font-size:.72rem;margin:0;font-style:italic;">High-potential team? Inquire here.</p>',
         '</div>',
       '</div>',
