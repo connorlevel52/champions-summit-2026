@@ -189,6 +189,26 @@
                 grid-template-columns: 1fr !important;
             }
         }
+
+        /* MOBILE RENDER FIX: PARTNERS SECTION
+           On narrow screens the partners content stacks into one very tall block.
+           A scroll-reveal threshold can never be met on an element that tall, so it
+           stayed at opacity 0 (blank navy band). The section is now always visible. */
+        #partners,
+        #partners .container {
+            opacity: 1 !important;
+            transform: none !important;
+            visibility: visible !important;
+        }
+
+        /* Respect reduced-motion settings: show reveal content immediately */
+        @media (prefers-reduced-motion: reduce) {
+            .fade-in {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -315,7 +335,7 @@
         ========================================================================= -->
         <section style="background:#022F4A; border-top:1px solid rgba(255,255,255,0.08); padding:2rem 0;">
             <div class="container fade-in">
-                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1rem; text-align:center; max-width:1100px; margin:0 auto;">
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap:1rem; text-align:center; max-width:1100px; margin:0 auto;">
                     <div>
                         <div style="font-family:'Trebuchet MS',sans-serif; font-size:2.2rem; font-weight:700; color:#FFF; line-height:1;">150</div>
                         <div style="font-size:.7rem; text-transform:uppercase; letter-spacing:.18em; color:rgba(255,255,255,0.65); margin-top:.4rem;">Curated Seats</div>
@@ -568,7 +588,7 @@
                     <h3 style="text-align:center; font-size:1.6rem; margin-bottom:.75rem;">What You'll Experience</h3>
                     <p style="max-width:700px; margin:0 auto; color:#4D4F52; font-size:1.05rem; line-height:1.8;">Champions Summit isn't a conference. It's a working session with the leaders you're working to become.</p>
                 </div>
-                <div class="fade-in" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; max-width:880px; margin:0 auto;">
+                <div class="fade-in" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap:1.5rem; max-width:880px; margin:0 auto;">
                     <div class="outcome-card">
                         <h3>CEO Fireside Conversations</h3>
                         <p>You'll sit ten feet from sitting CEOs as they unpack the decisions, failures, and inflection points that shaped their path. No PR filter. No rehearsed answers. Just the conversations they only have with people they trust.</p>
@@ -600,7 +620,7 @@
                         <p style="font-family:'Trebuchet MS',sans-serif; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#67696C; margin:1rem 0 0;">Brought to you by <a href="https://www.brunel.net/en-us/locations/calgary" target="_blank" rel="noopener" style="color:#D8722C; text-decoration:underline;">Brunel</a></p>
                     </div>
 
-                    <div class="ceo-fireside-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem;">
+                    <div class="ceo-fireside-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap:1.5rem;">
                         <!-- Mike Wieninger — Panelist -->
                         <div style="background:#FFF; padding:2rem; border-left:4px solid #D8722C; border-radius:6px; box-shadow:0 2px 12px rgba(2,47,74,0.08);">
                             <div style="width:72px; height:72px; border-radius:50%; background:#E8EDF2; margin-bottom:1rem; overflow:hidden; display:flex; align-items:center; justify-content:center;">
@@ -653,7 +673,7 @@
                         <h3 style="margin-top:1rem; font-size:1.6rem;">Inside the financial mind.</h3>
                     </div>
 
-                    <div class="ceo-fireside-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem; max-width:860px; margin:0 auto;">
+                    <div class="ceo-fireside-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap:1.5rem; max-width:860px; margin:0 auto;">
                         <!-- Eileen Marikar — Panelist -->
                         <div style="background:#FFF; padding:2rem; border-left:4px solid #D8722C; border-radius:6px; box-shadow:0 2px 12px rgba(2,47,74,0.08);">
                             <div style="width:72px; height:72px; border-radius:50%; background:#E8EDF2; margin-bottom:1rem; overflow:hidden; display:flex; align-items:center; justify-content:center;">
@@ -697,7 +717,7 @@
                         <p style="font-family:'Trebuchet MS',sans-serif; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#67696C; margin:1rem 0 0;">Brought to you by <a href="https://javaholdings.ca/" target="_blank" rel="noopener" style="color:#D8722C; text-decoration:underline;">Java Global Energy Infrastructure Solutions</a></p>
                     </div>
 
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap:1rem;">
                         <!-- Keith Chiasson -->
                         <div style="background:#FFF; padding:1.4rem 1.5rem; border-left:3px solid #D8722C; border-radius:4px; box-shadow:0 2px 8px rgba(2,47,74,0.05); display:flex; gap:1rem; align-items:flex-start;">
                             <div style="flex-shrink:0; width:52px; height:52px; border-radius:50%; background:#E8EDF2; overflow:hidden; display:flex; align-items:center; justify-content:center;">
@@ -939,9 +959,10 @@
 
         <!-- ========================================================================
              3b. AGENDA AT A GLANCE
+             (fade-in removed from the outer wrapper: too tall on mobile to trigger)
         ========================================================================= -->
         <section style="background:#022F4A; color:#FFF; padding:5rem 0;" id="agenda">
-            <div class="section-container fade-in">
+            <div class="section-container">
                 <h2 style="text-align:center; color:#FFF;">Your Two Days</h2>
                 <p style="text-align:center; max-width:700px; margin:0 auto 2rem; color:#FFF; font-size:1.05rem; line-height:1.8;">
                     1.5 days. Anchor sessions across afternoon, evening, and full day two. The Leadership Simulation threads across both days. Champions Hour closes it out.
@@ -951,7 +972,7 @@
                     <img src="photos/agenda.jpg" alt="Champions Summit 2025 — presenter on stage" style="width:100%; display:block; object-fit:cover; max-height:420px;">
                 </div>
 
-                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem; max-width:1000px; margin:0 auto;">
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap:2rem; max-width:1000px; margin:0 auto;">
                     <div style="background:rgba(255,255,255,0.05); padding:2.25rem; border-left:4px solid #D8722C; border-radius:6px;">
                         <p style="font-family:'Trebuchet MS',sans-serif; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.2em; color:#D8722C; margin-bottom:.5rem;">Day 1</p>
                         <h3 style="font-size:1.25rem; margin-bottom:.25rem; color:#FFF;">Monday, October 26</h3>
@@ -1099,9 +1120,11 @@
 
         <!-- ========================================================================
              7. PARTNERS & PARTNERSHIP OPPORTUNITIES
+             (fade-in removed from the outer wrapper: on mobile this block is
+              thousands of pixels tall and never reached the reveal threshold)
         ========================================================================= -->
         <section class="sponsors-section dark-section" id="partners">
-            <div class="container fade-in">
+            <div class="container">
                 <div class="section-header">
                     <span class="accent-label" style="color:#D8722C;">2026 PARTNERS</span>
                     <h2 style="color:#FFF;">Trusted By</h2>
@@ -1113,7 +1136,7 @@
                     <h3 style="color:#FFF; font-size:1.65rem; margin:0 auto .75rem; max-width:720px;">The leaders helping shape the room.</h3>
                     <p style="color:rgba(255,255,255,0.72); font-size:.98rem; line-height:1.7; max-width:680px; margin:0 auto 2rem;">Champions Summit is backed by operators and builders connected to leadership development, industry, and community impact.</p>
 
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.1rem; align-items:stretch;">
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap:1.1rem; align-items:stretch;">
                         <div style="position:relative; overflow:hidden; background:linear-gradient(145deg, rgba(255,255,255,0.11), rgba(255,255,255,0.045)); border:1px solid rgba(255,255,255,0.16); padding:2rem 1.75rem; border-radius:14px; box-shadow:0 18px 40px rgba(0,0,0,0.16);">
                             <div style="position:absolute; top:0; left:0; right:0; height:4px; background:#D8722C;"></div>
                             <p style="font-family:'Trebuchet MS',sans-serif; color:#D8722C; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.16em; margin:0 0 1rem;">Presenting Partner</p>
@@ -1221,7 +1244,7 @@
 
                 <!-- WHAT YOU'RE BUYING -->
                 <div style="max-width:920px; margin:0 auto 3.5rem;">
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem;">
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap:1.25rem;">
                         <div style="background:rgba(255,255,255,0.05); padding:1.5rem; border-left:3px solid #D8722C; border-radius:4px;">
                             <h4 style="color:#FFF; font-size:1.05rem; margin-bottom:.5rem;">Access, not advertising.</h4>
                             <p style="color:rgba(255,255,255,0.8); font-size:.9rem; line-height:1.6; margin:0;">Your people sit at the same table as Calgary's current and next wave of executive leaders.</p>
@@ -1379,6 +1402,42 @@ dropdownLinks.forEach(function (link) {
         }
     });
 });
+</script>
+
+<!-- FADE-IN SAFETY NET
+     Reveals any .fade-in block as soon as any part of it enters the screen
+     (threshold 0), so tall stacked sections on mobile can never get stuck invisible.
+     Works alongside main.js; uses inline styles so it does not depend on its class names. -->
+<script>
+(function () {
+    function reveal(el) {
+        el.style.setProperty('opacity', '1', 'important');
+        el.style.setProperty('transform', 'none', 'important');
+        el.style.setProperty('visibility', 'visible', 'important');
+    }
+    function init() {
+        var els = document.querySelectorAll('.fade-in');
+        if (!els.length) return;
+        if (!('IntersectionObserver' in window)) {
+            els.forEach(reveal);
+            return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    reveal(entry.target);
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function (el) { io.observe(el); });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
 </script>
 
 </body>
