@@ -208,6 +208,7 @@
 // Triggers 45 seconds after page load OR on exit intent (mouse leaving viewport top).
 // Shows once per device using localStorage (persists across sessions).
 (function () {
+  return; // Disabled: applications closed Oct 16, 2026
   var STORAGE_KEY = 'cs2026_popup_seen';
   if (localStorage.getItem(STORAGE_KEY)) return;
 
