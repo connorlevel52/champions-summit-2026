@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Champions Summit 2026 — Calgary's most curated room of rising executives. October 26–27, 2026, at the Hudson in Calgary.">
-    <title>Champions Summit 2026 | Executive Leadership Summit | Calgary</title>
+    <meta name="description" content="Champions Summit 2026 is a wrap. Join the interest list for Champions Summit 2027, Calgary's most curated room of rising executives.">
+    <title>Champions Summit | Join the 2027 Interest List | Calgary</title>
     <link rel="canonical" href="https://www.championssummit.ca/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Champions Summit">
     <meta property="og:url" content="https://www.championssummit.ca/">
-    <meta property="og:title" content="Champions Summit 2026 | Calgary's Most Curated Room of Rising Executives">
-    <meta property="og:description" content="150 rising executives. October 26–27, 2026, at the Hudson in Calgary.">
+    <meta property="og:title" content="Champions Summit | Join the 2027 Interest List">
+    <meta property="og:description" content="2026 is a wrap. Be first to hear about Champions Summit 2027 in Calgary.">
     <meta property="og:image" content="https://www.championssummit.ca/photos/share_image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="627">
@@ -219,94 +219,16 @@
                 transition: none !important;
             }
         }
-        /* EVENT BAR: countdown, then LIVE, hidden after the event */
-        :root { --cs-bar-h: 38px; }
-        html.cs-bar-off { --cs-bar-h: 0px; }
-        html.cs-bar-off .cs-event-bar { display: none; }
-        .main-nav { top: var(--cs-bar-h); }
-        body .hero { margin-top: calc(70px + var(--cs-bar-h)); }
-        [id] { scroll-margin-top: calc(110px + var(--cs-bar-h)); }
-        .cs-event-bar {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1001;
-            height: var(--cs-bar-h); box-sizing: border-box;
-            display: flex; align-items: center; justify-content: center; gap: 1.25rem;
-            padding: 0 1rem; background: #011B2B; border-bottom: 1px solid rgba(255,255,255,0.12);
-            color: #FFF; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: .82rem;
-            white-space: nowrap; overflow: hidden;
-        }
-        .cs-event-bar a { color: #FFF; text-decoration: none; }
-        .cs-event-bar a:hover, .cs-event-bar a:focus-visible { text-decoration: underline; }
-        .cs-event-bar a:focus-visible { outline: 2px solid #FFF; outline-offset: 2px; }
-        .cs-countdown { display: inline-flex; align-items: baseline; gap: .5rem; }
-        .cs-timer { font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif; font-variant-numeric: tabular-nums; letter-spacing: .02em; }
-        .cs-timer b { font-weight: 700; font-size: .95rem; }
-        .cs-live { display: none; align-items: center; gap: .5rem; }
-        .cs-event-bar.is-live .cs-countdown { display: none; }
-        .cs-event-bar.is-live .cs-live { display: inline-flex; }
-        .cs-live-tag { display: inline-flex; align-items: center; gap: .45rem; color: #FF3B30; font-family: 'Trebuchet MS', 'Lucida Grande', sans-serif; font-weight: 700; letter-spacing: .08em; }
-        .cs-live-dot { width: 9px; height: 9px; border-radius: 50%; background: #FF3B30; animation: csPulse 1.4s ease-in-out infinite; }
-        @keyframes csPulse { 0%, 100% { transform: scale(.65); } 50% { transform: scale(1.3); } }
-        @media (prefers-reduced-motion: reduce) { .cs-live-dot { animation: none; } }
-        .cs-bar-sep { width: 1px; height: 14px; background: rgba(255,255,255,0.3); }
-        .cs-bar-location { display: inline-flex; align-items: center; gap: .4rem; }
-        .cs-bar-location svg { flex-shrink: 0; }
-        @media (max-width: 768px) {
-            [id] { scroll-margin-top: calc(95px + var(--cs-bar-h)); }
-        }
-        @media (max-width: 640px) {
-            :root { --cs-bar-h: 34px; }
-            .cs-event-bar { gap: .75rem; font-size: .74rem; padding: 0 .75rem; }
-            .cs-timer b { font-size: .82rem; }
-            .cs-addr, .cs-live-name { display: none; }
-        }
+        /* POST-EVENT: 2027 INTEREST FORM */
+        .cs-interest { background:#F4F6F8; padding:5rem 0; }
+        .cs-interest-intro { max-width:720px; margin:0 auto 2.5rem; text-align:center; }
+        .cs-form-card { max-width:640px; margin:0 auto; background:#FFF; border-top:4px solid #D8722C; border-radius:10px; box-shadow:0 12px 40px rgba(2,47,74,0.12); padding:2rem 1.75rem; text-align:left; min-height:320px; }
+        .cs-form-note { text-align:center; color:#67696C; font-size:.85rem; margin:1.25rem 0 0; }
+        .cs-form-note a { color:#D8722C; text-decoration:underline; }
+        @media (max-width:560px) { .cs-form-card { padding:1.75rem 1.25rem; } }
     </style>
 </head>
 <body>
-    <!-- EVENT BAR: counts down to 12:00 PM MT Oct 26, shows LIVE until 7:00 PM MT Oct 27, then hides -->
-    <div class="cs-event-bar" id="cs-event-bar" role="region" aria-label="Event status">
-        <span class="cs-countdown">
-            <span class="cs-timer" id="cs-timer">October 26</span>
-        </span>
-        <span class="cs-live">
-            <span class="cs-live-tag"><span class="cs-live-dot" aria-hidden="true"></span>LIVE</span>
-            <span class="cs-live-name">Champions Summit 2026</span>
-        </span>
-        <span class="cs-bar-sep" aria-hidden="true"></span>
-        <a class="cs-bar-location" href="https://www.google.com/maps/search/?api=1&amp;query=Hudson%2C+200+8+Avenue+SW%2C+Calgary%2C+AB" target="_blank" rel="noopener" aria-label="Hudson, 6th Floor, 200 8 Avenue SW, Calgary. Open in Google Maps">
-            <svg width="11" height="14" viewBox="0 0 12 16" aria-hidden="true"><path fill="#FFF" d="M6 0C2.7 0 0 2.6 0 5.9 0 10.3 6 16 6 16s6-5.7 6-10.1C12 2.6 9.3 0 6 0zm0 8.2a2.3 2.3 0 1 1 0-4.6 2.3 2.3 0 0 1 0 4.6z"/></svg>
-            <span>Hudson, 6th Floor<span class="cs-addr">, 200 8 Avenue SW, Calgary</span></span>
-        </a>
-    </div>
-    <script>
-    (function () {
-        var START = Date.parse('2026-10-26T12:00:00-06:00'); // Day 1 start, Mountain Time
-        var END = Date.parse('2026-10-27T19:00:00-06:00');   // Bar hides after Day 2
-        var bar = document.getElementById('cs-event-bar');
-        var timer = document.getElementById('cs-timer');
-        var root = document.documentElement;
-        var interval = null;
-        function pad(n) { return n < 10 ? '0' + n : String(n); }
-        function tick() {
-            var now = Date.now();
-            if (now >= END) {
-                root.classList.add('cs-bar-off');
-                if (interval) clearInterval(interval);
-                return false;
-            }
-            if (now >= START) {
-                bar.classList.add('is-live');
-                return true;
-            }
-            var s = Math.floor((START - now) / 1000);
-            var d = Math.floor(s / 86400); s -= d * 86400;
-            var h = Math.floor(s / 3600); s -= h * 3600;
-            var m = Math.floor(s / 60); s -= m * 60;
-            timer.innerHTML = '<b>' + pad(d) + '</b>d <b>' + pad(h) + '</b>h <b>' + pad(m) + '</b>m <b>' + pad(s) + '</b>s';
-            return true;
-        }
-        if (tick()) interval = setInterval(tick, 1000);
-    })();
-    </script>
     <!-- NAVIGATION -->
     <nav class="main-nav">
         <div class="nav-container">
@@ -330,15 +252,14 @@
                     </a>
                     <div class="nav-dropdown" role="menu">
                         <a href="#ceo-firesides" role="menuitem">2026 CEO Firesides</a>
-                        <a href="#the-format" role="menuitem">The Format</a>
                         <a href="#diary-of-a-coo" role="menuitem">Diary of a COO</a>
                         <a href="#diary-of-a-cfo" role="menuitem">Diary of a CFO</a>
                         <a href="#mentor-cafe" role="menuitem">2026 Mentor Caf&eacute;</a>
                     </div>
                 </li>
-                <li><a href="#agenda">Agenda</a></li>
                 <li><a href="#code">The Code</a></li>
                 <li><a href="#partners">Partners</a></li>
+                <li><a href="#interest" class="btn-primary nav-cta">2027 Interest List</a></li>
             </ul>
         </div>
     </nav>
@@ -352,67 +273,12 @@
             <div style="position:absolute;inset:0;background-image:url('hero-bg.jpg');background-size:cover;background-position:center 40%;z-index:0;"></div>
             <div class="hero-overlay" style="background:rgba(2,47,74,0.99);"></div>
             <div class="hero-content">
-                <span class="hero-accent">OCTOBER 26–27, 2026 · HUDSON · CALGARY</span>
+                <span class="hero-accent">CHAMPIONS SUMMIT 2026 · THAT'S A WRAP</span>
                 <h1>Calgary's Most Curated Room of Rising Executive Leaders.</h1>
-                <p style="font-size:1.25rem; line-height:1.6; margin-bottom:.75rem;">1.5 days that close the gap to the executive suite.</p>
-
-                <div class="hero-ceo-card" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); padding:1.5rem 1.75rem; border-radius:6px; max-width:640px; margin:0 auto 2rem;">
-                    <p class="ceo-firesides-label" style="font-family:'Trebuchet MS',sans-serif; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.22em; color:#D8722C; margin-bottom:1.1rem; text-align:center;">2026 CEO Firesides — Confirmed</p>
-                    <div class="hero-speaker-grid" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem 2rem;">
-                        <div style="text-align:center;">
-                            <p style="color:#FFF; font-weight:700; font-size:.98rem; margin:0 0 .25rem; line-height:1.3;">Janine Sullivan</p>
-                            <p style="color:rgba(255,255,255,0.65); font-size:.78rem; margin:0; line-height:1.4;">President &amp; CEO, FortisAlberta</p>
-                        </div>
-                        <div style="text-align:center;">
-                            <p style="color:#FFF; font-weight:700; font-size:.98rem; margin:0 0 .25rem; line-height:1.3;">Robert Hayes</p>
-                            <p style="color:rgba(255,255,255,0.65); font-size:.78rem; margin:0; line-height:1.4;">President &amp; CEO, Calgary Sports &amp; Entertainment Corporation</p>
-                        </div>
-                        <div style="text-align:center;">
-                            <p style="color:#FFF; font-weight:700; font-size:.98rem; margin:0 0 .25rem; line-height:1.3;">Andy Trewick</p>
-                            <p style="color:rgba(255,255,255,0.65); font-size:.78rem; margin:0; line-height:1.4;">President &amp; CEO, Graham</p>
-                        </div>
-                        <div style="text-align:center;">
-                            <p style="color:#FFF; font-weight:700; font-size:.98rem; margin:0 0 .25rem; line-height:1.3;">Mark Little</p>
-                            <p style="color:rgba(255,255,255,0.65); font-size:.78rem; margin:0; line-height:1.4;">Founder &amp; CEO, Jotson (Former President &amp; CEO, Suncor)</p>
-                        </div>
-                    </div>
-                    <div style="border-top:1px solid rgba(255,255,255,0.15); margin-top:1.25rem; padding-top:1rem; text-align:center;">
-                        <p style="font-family:'Trebuchet MS',sans-serif; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.22em; color:#D8722C; margin-bottom:1.1rem;">Diary of a COO &amp; CFO Panelists — Confirmed</p>
-
-                        <p style="font-family:'Trebuchet MS',sans-serif; font-size:.62rem; font-weight:700; text-transform:uppercase; letter-spacing:.16em; color:rgba(255,255,255,0.5); margin:0 0 .65rem;">Diary of a COO</p>
-                        <div class="hero-panelist-grid" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:1rem 2rem; margin-bottom:1.1rem;">
-                            <div>
-                                <p style="color:#FFF; font-weight:700; font-size:.98rem; margin:0 0 .25rem; line-height:1.3;">Mike Wieninger</p>
-                                <p style="color:rgba(255,255,255,0.65); font-size:.78rem; margin:0; line-height:1.4;">COO, Canadian Operations, PCL Construction</p>
-                            </div>
-                            <div>
-                                <p style="color:#FFF; font-weight:700; font-size:.98rem; margin:0 0 .25rem; line-height:1.3;">Keith Chiasson</p>
-                                <p style="color:rgba(255,255,255,0.65); font-size:.78rem; margin:0; line-height:1.4;">Former COO, Cenovus Energy</p>
-                            </div>
-                            <div style="grid-column:1 / -1;">
-                                <p style="color:#FFF; font-weight:700; font-size:.98rem; margin:0 0 .25rem; line-height:1.3;">Kristen McGill</p>
-                                <p style="color:rgba(255,255,255,0.65); font-size:.78rem; margin:0; line-height:1.4;">Former COO, ZayZoon</p>
-                            </div>
-                        </div>
-
-                        <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:1.1rem;">
-                            <p style="font-family:'Trebuchet MS',sans-serif; font-size:.62rem; font-weight:700; text-transform:uppercase; letter-spacing:.16em; color:rgba(255,255,255,0.5); margin:0 0 .65rem;">Diary of a CFO</p>
-                            <div class="hero-panelist-grid" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:1rem 2rem;">
-                                <div>
-                                    <p style="color:#FFF; font-weight:700; font-size:.98rem; margin:0 0 .25rem; line-height:1.3;">Eileen Marikar</p>
-                                    <p style="color:rgba(255,255,255,0.65); font-size:.78rem; margin:0; line-height:1.4;">Senior VP &amp; CFO, Keyera</p>
-                                </div>
-                                <div>
-                                    <p style="color:#FFF; font-weight:700; font-size:.98rem; margin:0 0 .25rem; line-height:1.3;">Derek Payne</p>
-                                    <p style="color:rgba(255,255,255,0.65); font-size:.78rem; margin:0; line-height:1.4;">Former CFO, DIRTT</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <p style="font-size:1.25rem; line-height:1.6; margin-bottom:.75rem;">Where rising executives close the gap to the executive suite. 2027 is next.</p>
 
                 <div class="hero-cta">
-                    <a href="#agenda" class="btn btn-primary btn-large">View the Agenda</a>
+                    <a href="#interest" class="btn btn-primary btn-large">Join the 2027 Interest List</a>
                 </div>
             </div>
         </section>
@@ -436,8 +302,8 @@
                         <div style="font-size:.7rem; text-transform:uppercase; letter-spacing:.18em; color:rgba(255,255,255,0.65); margin-top:.4rem;">Organizations</div>
                     </div>
                     <div>
-                        <div style="font-family:'Trebuchet MS',sans-serif; font-size:2.2rem; font-weight:700; color:#FFF; line-height:1;">1.5</div>
-                        <div style="font-size:.7rem; text-transform:uppercase; letter-spacing:.18em; color:rgba(255,255,255,0.65); margin-top:.4rem;">Days · No Filler</div>
+                        <div style="font-family:'Trebuchet MS',sans-serif; font-size:2.2rem; font-weight:700; color:#FFF; line-height:1;">4</div>
+                        <div style="font-size:.7rem; text-transform:uppercase; letter-spacing:.18em; color:rgba(255,255,255,0.65); margin-top:.4rem;">CEO Firesides</div>
                     </div>
                 </div>
             </div>
@@ -452,7 +318,8 @@
                     <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C; margin-bottom:1.25rem; display:inline-block;">WHO THIS IS FOR</span>
                     <h2 style="color:#022F4A; font-size:clamp(1.8rem,3.5vw,2.75rem); margin-bottom:1.75rem;">Is This Room for You?</h2>
                     <p style="font-size:1.15rem; color:#4D4F52; line-height:1.8; margin-bottom:1.25rem;">You're not at the top yet — but you can see it from here. You've got the team, the title, and the trajectory. What you don't have is direct access to the unfiltered conversations happening at the next level.</p>
-                    <p style="font-size:1.15rem; color:#022F4A; font-weight:700; line-height:1.8; margin:0;">That's what Champions Summit was built to give you.</p>
+                    <p style="font-size:1.15rem; color:#022F4A; font-weight:700; line-height:1.8; margin:0 0 2rem;">That's what Champions Summit was built to give you.</p>
+                    <a href="#interest" class="btn-primary btn-large">Join the 2027 Interest List</a>
                 </div>
             </div>
         </section>
@@ -460,6 +327,11 @@
         <!-- ========================================================================
              1d. SEE THE ROOM — VIDEO + PHOTO STRIP
         ========================================================================= -->
+        <!-- HIDDEN until 2026 photography and video are ready.
+             The <template> tag keeps everything inside it from showing or loading
+             (no video, no photos). To bring the section back, delete the opening
+             <template> line and the closing </template> line around it. -->
+        <template id="see-the-room-hidden">
         <section class="section--white" style="padding:3.5rem 0;">
             <div class="section-container fade-in">
                 <div style="max-width:900px; margin:0 auto;">
@@ -575,6 +447,7 @@
                 </div>
             </div>
         </section>
+        </template>
 
         <!-- ========================================================================
              2. THE HOOK
@@ -593,7 +466,7 @@
         ========================================================================= -->
         <section class="section section--white" id="the-room">
             <div class="section-container">
-                <h2 style="text-align:center;">The Leaders You'll Spend 1.5 Days With</h2>
+                <h2 style="text-align:center;">Who Was in the Room</h2>
                 <p style="text-align:center; max-width:760px; margin:0 auto 2rem; color:#4D4F52; font-size:1.1rem; line-height:1.8;">
                     Every voice in the room earned their seat. Here are a few of them.
                 </p>
@@ -606,7 +479,7 @@
                 <!-- 2026 CONFIRMED CEO FIRESIDES — full cards -->
                 <div id="ceo-firesides" class="fade-in" style="max-width:1100px; margin:0 auto 4rem;">
                     <div style="text-align:center; margin-bottom:2.5rem;">
-                        <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C;">2026 CEO FIRESIDES — CONFIRMED</span>
+                        <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C;">2026 CEO FIRESIDES</span>
                         <h3 style="margin-top:1rem; font-size:1.6rem;">The CEOs unscripted. On the record.</h3>
                     </div>
 
@@ -658,35 +531,15 @@
 
                 </div>
 
-                <!-- 4 FORMAT CARDS -->
-                <div id="the-format" class="fade-in" style="text-align:center; margin-bottom:2rem;">
-                    <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C; margin-bottom:1.25rem; display:inline-block;">THE FORMAT</span>
-                    <h3 style="text-align:center; font-size:1.6rem; margin-bottom:.75rem;">What You'll Experience</h3>
-                    <p style="max-width:700px; margin:0 auto; color:#4D4F52; font-size:1.05rem; line-height:1.8;">Champions Summit isn't a conference. It's a working session with the leaders you're working to become.</p>
-                </div>
-                <div class="fade-in" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap:1.5rem; max-width:880px; margin:0 auto;">
-                    <div class="outcome-card">
-                        <h3>CEO Fireside Conversations</h3>
-                        <p>You'll sit ten feet from sitting CEOs as they unpack the decisions, failures, and inflection points that shaped their path. No PR filter. No rehearsed answers. Just the conversations they only have with people they trust.</p>
-                    </div>
-                    <div class="outcome-card">
-                        <h3>Diary of a COO + CFO Panels</h3>
-                        <p>You'll hear from the operators behind the scenes — the people who turn vision into execution — as they break down the trade-offs, missteps, and frameworks that moved the needle.</p>
-                    </div>
-                    <div class="outcome-card">
-                        <h3>Mentor Café</h3>
-                        <p>You'll sit across from senior executives in small-group conversations designed for the questions you can't ask in a meeting at your own company.</p>
-                    </div>
-                    <div class="outcome-card">
-                        <h3>The Room Itself</h3>
-                        <p>You'll spend 1.5 days with 149 other current and rising executives wrestling with the same questions you are — and many of them will be in your network long after the event ends.</p>
-                    </div>
+                <!-- INTERSTITIAL CTA -->
+                <div style="text-align:center; margin-top:3rem;">
+                    <a href="#interest" class="btn-primary btn-large">Join the 2027 Interest List</a>
                 </div>
 
-                <!-- DIARY OF A COO — CONFIRMED -->
+                <!-- DIARY OF A COO -->
                 <div id="diary-of-a-coo" class="fade-in" style="max-width:1100px; margin:5rem auto 0;">
                     <div style="text-align:center; margin-bottom:2.5rem;">
-                        <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C;">DIARY OF A COO — CONFIRMED</span>
+                        <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C;">2026 DIARY OF A COO</span>
                         <h3 style="margin-top:1rem; font-size:1.6rem;">The view from the second chair.</h3>
                         <p style="font-family:'Trebuchet MS',sans-serif; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#67696C; margin:1rem 0 0;">Brought to you by <a href="https://www.brunel.net/en-us/locations/calgary" target="_blank" rel="noopener" style="color:#D8722C; text-decoration:underline;">Brunel</a></p>
                     </div>
@@ -739,7 +592,7 @@
                 <!-- DIARY OF A CFO — CONFIRMED -->
                 <div id="diary-of-a-cfo" class="fade-in" style="max-width:1100px; margin:5rem auto 0;">
                     <div style="text-align:center; margin-bottom:2.5rem;">
-                        <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C;">DIARY OF A CFO — CONFIRMED</span>
+                        <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C;">2026 DIARY OF A CFO</span>
                         <h3 style="margin-top:1rem; font-size:1.6rem;">Inside the financial mind.</h3>
                     </div>
 
@@ -780,9 +633,9 @@
                 <!-- 2026 MENTOR CAFÉ — CONFIRMED -->
                 <div id="mentor-cafe" class="fade-in" style="max-width:1100px; margin:5rem auto 0;">
                     <div style="text-align:center; margin-bottom:2rem;">
-                        <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C;">2026 MENTOR CAFÉ — CONFIRMED</span>
-                        <h3 style="margin-top:1rem; font-size:1.6rem;">The mentors at your table.</h3>
-                        <p style="max-width:680px; margin:.5rem auto 0; color:#4D4F52;">A rotating small-group format. You'll sit across from senior executives — CEOs, founders, board chairs, and operators — from across industries.</p>
+                        <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C;">2026 MENTOR CAFÉ</span>
+                        <h3 style="margin-top:1rem; font-size:1.6rem;">The mentors at the table.</h3>
+                        <p style="max-width:680px; margin:.5rem auto 0; color:#4D4F52;">A rotating small-group format where attendees sat across from CEOs, founders, board chairs, and operators from across industries.</p>
                         <p style="font-family:'Trebuchet MS',sans-serif; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#67696C; margin:1rem 0 0;">Brought to you by <a href="https://javaholdings.ca/" target="_blank" rel="noopener" style="color:#D8722C; text-decoration:underline;">Java Global Energy Infrastructure Solutions</a></p>
                     </div>
 
@@ -1048,68 +901,6 @@
         <!-- END #the-room -->
 
         <!-- ========================================================================
-             3b. AGENDA AT A GLANCE
-             (fade-in removed from the outer wrapper: too tall on mobile to trigger)
-        ========================================================================= -->
-        <section style="background:#022F4A; color:#FFF; padding:5rem 0;" id="agenda">
-            <div class="section-container">
-                <h2 style="text-align:center; color:#FFF;">Your 1.5 Days</h2>
-                <p style="text-align:center; max-width:700px; margin:0 auto 2rem; color:#FFF; font-size:1.05rem; line-height:1.8;">
-                    1.5 days. Anchor sessions across afternoon, evening, and full day two. The Leadership Simulation threads across both days. Champions Hour closes it out.
-                </p>
-
-                <div class="fade-in" style="max-width:800px; margin:0 auto 3rem; border-radius:8px; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.25);">
-                    <img src="photos/agenda.jpg" alt="Champions Summit 2025 — presenter on stage" style="width:100%; display:block; object-fit:cover; max-height:420px;">
-                </div>
-
-                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap:2rem; max-width:1000px; margin:0 auto;">
-                    <div style="background:rgba(255,255,255,0.05); padding:2.25rem; border-left:4px solid #D8722C; border-radius:6px;">
-                        <p style="font-family:'Trebuchet MS',sans-serif; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.2em; color:#D8722C; margin-bottom:.5rem;">Day 1</p>
-                        <h3 style="font-size:1.25rem; margin-bottom:.25rem; color:#FFF;">Monday, October 26</h3>
-                        <p style="color:#FFF; font-size:.9rem; margin-bottom:1.5rem; opacity:.85;">Afternoon &amp; Evening · 12:00 PM – 7:30 PM</p>
-                        <ul style="list-style:none; padding:0; margin:0;">
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">12:00 PM</span><span style="color:#FFF; line-height:1.5;">Lunch &amp; Registration</span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">1:00 PM</span><span style="color:#FFF; line-height:1.5;">Summit Kick-Off | Leadership Simulation: Act One — Vision &amp; Team Formation<span style="display:block; font-family:'Trebuchet MS',sans-serif; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:#D8722C; margin-top:.3rem;">Brought to you by Orennia</span></span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">1:45 PM</span><span style="color:#FFF; line-height:1.5;">CEO Fireside | Janine Sullivan, President &amp; CEO, FortisAlberta</span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">2:30 PM</span><span style="color:#FFF; line-height:1.5;">Leadership Simulation: Act Two — The First Decision</span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">3:15 PM</span><span style="color:#FFF; line-height:1.5;">Networking Break</span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">3:45 PM</span><span style="color:#FFF; line-height:1.5;">Diary of a COO | Panel<span style="display:block; font-family:'Trebuchet MS',sans-serif; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:#D8722C; margin-top:.3rem;">Brought to you by Brunel</span></span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">4:30 PM</span><span style="color:#FFF; line-height:1.5;">Leadership Simulation: Act Three — Pressure Mounts</span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">5:15 PM</span><span style="color:#FFF; line-height:1.5;">Dinner &amp; Networking<span style="display:block; font-family:'Trebuchet MS',sans-serif; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:#D8722C; margin-top:.3rem;">Brought to you by MNP</span></span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">6:15 PM</span><span style="color:#FFF; line-height:1.5;">CEO Fireside | Andy Trewick, President &amp; CEO, Graham</span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">7:00 PM</span><span style="color:#FFF; line-height:1.5;">Networked Learning</span></li>
-                            <li style="padding:.8rem 0; display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">7:30 PM</span><span style="color:#FFF; line-height:1.5;">Networking Cocktail Reception</span></li>
-                        </ul>
-                    </div>
-                    <div style="background:rgba(255,255,255,0.05); padding:2.25rem; border-left:4px solid #D8722C; border-radius:6px;">
-                        <p style="font-family:'Trebuchet MS',sans-serif; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.2em; color:#D8722C; margin-bottom:.5rem;">Day 2</p>
-                        <h3 style="font-size:1.25rem; margin-bottom:.25rem; color:#FFF;">Tuesday, October 27</h3>
-                        <p style="color:#FFF; font-size:.9rem; margin-bottom:1.5rem; opacity:.85;">Full Day · 7:30 AM – 4:30 PM</p>
-                        <ul style="list-style:none; padding:0; margin:0;">
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">7:30 AM</span><span style="color:#FFF; line-height:1.5;">Breakfast at the Mentor Café: Truth from the Top<span style="display:block; font-family:'Trebuchet MS',sans-serif; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:#D8722C; margin-top:.3rem;">Brought to you by Java Global Energy Infrastructure Solutions</span></span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">9:00 AM</span><span style="color:#FFF; line-height:1.5;">Break</span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">9:15 AM</span><span style="color:#FFF; line-height:1.5;">Day Two Kick-Off | Leadership Simulation: Act Four — Crisis Escalation</span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">10:00 AM</span><span style="color:#FFF; line-height:1.5;">CEO Fireside | Robert Hayes, President &amp; CEO, Calgary Sports &amp; Entertainment Co.</span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">10:45 AM</span><span style="color:#FFF; line-height:1.5;">Networking Break<span style="display:block; font-family:'Trebuchet MS',sans-serif; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:#D8722C; margin-top:.3rem;">Brought to you by Fit Kitchen</span></span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">11:15 AM</span><span style="color:#FFF; line-height:1.5;">Leadership Simulation: Act Five — Hard Choices</span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">12:00 PM</span><span style="color:#FFF; line-height:1.5;">Networking Lunch</span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">1:00 PM</span><span style="color:#FFF; line-height:1.5;">Diary of a CFO | Panel</span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">1:45 PM</span><span style="color:#FFF; line-height:1.5;">Leadership Simulation: Final Act — The Defining Moment</span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">2:30 PM</span><span style="color:#FFF; line-height:1.5;">CEO Fireside | Mark Little, Founder &amp; CEO, Jotson (Former President &amp; CEO, Suncor)</span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">3:15 PM</span><span style="color:#FFF; line-height:1.5;">Bio Break</span></li>
-                            <li style="padding:.8rem 0; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">3:30 PM</span><span style="color:#FFF; line-height:1.5;">The Champions Playbook</span></li>
-                            <li style="padding:.8rem 0; display:flex; gap:1rem;"><span style="flex-shrink:0; width:78px; font-weight:700; color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.9rem;">4:30 PM</span><span style="color:#FFF; line-height:1.5;">Champions Hour Networking<span style="display:block; font-family:'Trebuchet MS',sans-serif; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:#D8722C; margin-top:.3rem;">Brought to you by Ovintiv</span></span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <p style="text-align:center; margin-top:2.5rem; color:#FFF; font-style:italic; font-size:.95rem;">
-                    Venue: Hudson, 200 - 8 Avenue SW, 6th Floor, Calgary. Specific session times subject to minor changes.
-                </p>
-            </div>
-        </section>
-
-        <!-- ========================================================================
              4. WHO THIS IS FOR / NOT FOR
         ========================================================================= -->
         <section class="info-section" id="who-its-for">
@@ -1165,6 +956,34 @@
                     How we lead in this room is how we lead everywhere.
                 </p>
             </div>
+        </section>
+
+        <!-- ========================================================================
+             6. 2027 INTEREST LIST (HubSpot form). Every CTA on the page points here.
+        ========================================================================= -->
+        <section class="cs-interest" id="interest">
+            <div class="container fade-in">
+                <div class="cs-interest-intro">
+                    <span class="accent-label" style="background:rgba(216,114,44,0.1); color:#D8722C; margin-bottom:1.25rem; display:inline-block;">CHAMPIONS SUMMIT 2027</span>
+                    <h2 style="font-size:clamp(1.8rem,3.5vw,2.75rem); color:#022F4A; margin-bottom:1.25rem;">The 2027 Room Starts Here.</h2>
+                    <p style="font-size:1.15rem; color:#4D4F52; line-height:1.8; margin:0;">2026 is in the books. The next room won't wait for you to notice it. Join the interest list and be first to hear the 2027 dates, the first confirmed CEOs, and when applications open. Sending your leaders? Start here too.</p>
+                </div>
+                <div class="cs-form-card">
+                    <!-- HubSpot form: Champions Summit 2027 interest list -->
+                    <div class="hs-form-frame" data-region="na1" data-form-id="d0a0fad3-4e8d-44e6-b311-1c3e2280255f" data-portal-id="3933414"></div>
+                </div>
+                <p class="cs-form-note" id="cs-form-note" hidden>Form not loading? Email <a href="mailto:hello@level52.ca?subject=Champions%20Summit%202027%20Interest%20List">hello@level52.ca</a> and we'll add you to the list.</p>
+            </div>
+            <script src="https://js.hsforms.net/forms/embed/3933414.js" defer></script>
+            <script>
+            /* Shows the email fallback if the HubSpot form hasn't appeared (ad blockers, network issues). */
+            window.addEventListener('load', function () {
+                setTimeout(function () {
+                    var frame = document.querySelector('#interest .hs-form-frame');
+                    if (frame && !frame.querySelector('iframe')) document.getElementById('cs-form-note').hidden = false;
+                }, 8000);
+            });
+            </script>
         </section>
 
         <!-- ========================================================================
@@ -1235,7 +1054,7 @@
 
                 <!-- CONFIRMED PARTNERS -->
                 <div style="max-width:1040px; margin:0 auto 4rem; text-align:center;">
-                    <p style="color:rgba(255,255,255,0.72); font-size:.78rem; text-transform:uppercase; letter-spacing:.28em; margin-bottom:.75rem;">Confirmed Partners</p>
+                    <p style="color:rgba(255,255,255,0.72); font-size:.78rem; text-transform:uppercase; letter-spacing:.28em; margin-bottom:.75rem;">Experience Partners</p>
                     <h3 style="color:#FFF; font-size:1.65rem; margin:0 auto .75rem; max-width:720px;">The organizations backing key summit experiences.</h3>
                     <p style="color:rgba(255,255,255,0.72); font-size:.98rem; line-height:1.7; max-width:680px; margin:0 auto 2rem;">These partners bring you the leadership experiences that make Champions Summit more than a conference.</p>
                     <div class="confirmed-sponsors-grid">
@@ -1316,41 +1135,11 @@
                     </div>
                 </div>
 
-                <!-- OPEN OPPORTUNITIES -->
-                <div style="max-width:920px; margin:0 auto;">
-                    <h3 style="color:#FFF; text-align:center; font-size:1.3rem; margin-bottom:2rem; text-transform:uppercase; letter-spacing:.1em;">2026 Partnership Opportunities</h3>
-                    <div class="partnership-opps-grid">
-                        <div style="background:rgba(255,255,255,0.08); padding:1.1rem 1.4rem; border-radius:6px; border:1px solid rgba(255,255,255,0.15);">
-                            <p style="color:rgba(255,255,255,0.6); font-size:.65rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.3rem;">&#10003; Closed</p>
-                            <p style="color:#FFF; font-size:1rem; font-weight:700; margin:0 0 .5rem;">Diary of a COO</p>
-                            <p style="color:rgba(255,255,255,0.75); font-size:.85rem; margin:0 0 .6rem;">Brought to you by: <a href="https://www.brunel.net/en-us/locations/calgary" target="_blank" rel="noopener" style="color:#FFF; text-decoration:underline;">Brunel</a></p>
-                        </div>
-                        <div style="background:rgba(255,255,255,0.08); padding:1.1rem 1.4rem; border-radius:6px; border:1px solid rgba(255,255,255,0.15);">
-                            <p style="color:rgba(255,255,255,0.6); font-size:.65rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.3rem;">&#10003; Closed</p>
-                            <p style="color:#FFF; font-size:1rem; font-weight:700; margin:0 0 .5rem;">Leadership Simulation</p>
-                            <p style="color:rgba(255,255,255,0.75); font-size:.85rem; margin:0 0 .6rem;">Brought to you by: <a href="https://orennia.com/" target="_blank" rel="noopener" style="color:#FFF; text-decoration:underline;">Orennia</a></p>
-                        </div>
-                        <div style="background:rgba(255,255,255,0.08); padding:1.1rem 1.4rem; border-radius:6px; border:1px solid rgba(255,255,255,0.15);">
-                            <p style="color:rgba(255,255,255,0.6); font-size:.65rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.3rem;">&#10003; Closed</p>
-                            <p style="color:#FFF; font-size:1rem; font-weight:700; margin:0 0 .5rem;">Evening Experience</p>
-                            <p style="color:rgba(255,255,255,0.75); font-size:.85rem; margin:0 0 .6rem;">Brought to you by: <a href="https://www.mnp.ca/" target="_blank" rel="noopener" style="color:#FFF; text-decoration:underline;">MNP</a></p>
-                        </div>
-                        <div style="background:rgba(255,255,255,0.08); padding:1.1rem 1.4rem; border-radius:6px; border:1px solid rgba(255,255,255,0.15);">
-                            <p style="color:rgba(255,255,255,0.6); font-size:.65rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.3rem;">&#10003; Closed</p>
-                            <p style="color:#FFF; font-size:1rem; font-weight:700; margin:0 0 .5rem;">Mentor Café</p>
-                            <p style="color:rgba(255,255,255,0.75); font-size:.85rem; margin:0 0 .6rem;">Brought to you by: <a href="https://javaholdings.ca/" target="_blank" rel="noopener" style="color:#FFF; text-decoration:underline;">Java Global Energy Infrastructure Solutions</a></p>
-                        </div>
-                        <div style="background:rgba(255,255,255,0.08); padding:1.1rem 1.4rem; border-radius:6px; border:1px solid rgba(255,255,255,0.15);">
-                            <p style="color:rgba(255,255,255,0.6); font-size:.65rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.3rem;">&#10003; Closed</p>
-                            <p style="color:#FFF; font-size:1rem; font-weight:700; margin:0 0 .5rem;">Champions Pathway</p>
-                            <p style="color:rgba(255,255,255,0.75); font-size:.85rem; margin:0 0 .6rem;">Brought to you by: <a href="https://craigsenyk.com/" target="_blank" rel="noopener" style="color:#FFF; text-decoration:underline;">Craig Senyk Initiatives</a></p>
-                        </div>
-                        <div style="background:rgba(255,255,255,0.08); padding:1.1rem 1.4rem; border-radius:6px; border:1px solid rgba(255,255,255,0.15);">
-                            <p style="color:rgba(255,255,255,0.6); font-size:.65rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.3rem;">&#10003; Closed</p>
-                            <p style="color:#FFF; font-size:1rem; font-weight:700; margin:0 0 .5rem;">Champions Hour</p>
-                            <p style="color:rgba(255,255,255,0.75); font-size:.85rem; margin:0 0 .6rem;">Brought to you by: <a href="https://www.ovintiv.com/" target="_blank" rel="noopener" style="color:#FFF; text-decoration:underline;">Ovintiv</a></p>
-                        </div>
-                    </div>
+                <!-- 2027 PARTNERSHIPS -->
+                <div style="max-width:780px; margin:0 auto; padding:2.25rem; background:rgba(216,114,44,0.12); border:1px solid rgba(216,114,44,0.4); border-radius:8px; text-align:center;">
+                    <p style="color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.22em; margin-bottom:1rem;">Partner in 2027</p>
+                    <p style="color:#FFF; font-size:1.15rem; line-height:1.6; margin-bottom:1.5rem;">Every 2026 partnership was exclusive: one partner per experience. 2027 opportunities are being shaped now. Let's talk about where your organization fits.</p>
+                    <a href="mailto:jayson@level52.ca?subject=Champions%20Summit%202027%20Partnership&amp;body=Hi%20Jayson%2C%0A%0AI%27m%20interested%20in%20exploring%20a%20partnership%20for%20Champions%20Summit%202027%20and%20would%20love%20to%20learn%20more%20about%20the%20opportunities.%0A%0AName%3A%0AOrganization%3A%0ARole%3A%0A%0AThanks%2C" class="btn-primary btn-large">Explore 2027 Partnerships</a>
                 </div>
             </div>
         </section>
@@ -1382,16 +1171,88 @@
                         <li><a href="#the-room">The Room</a></li>
                         <li><a href="#code">The Code</a></li>
                         <li><a href="#partners">Partner</a></li>
+                        <li><a href="#interest">2027 Interest List</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
-                    <p>Questions? Email us at <a href="mailto:jayson@level52.ca">jayson@level52.ca</a></p>
+                    <p>Questions? Email us at <a href="mailto:hello@level52.ca">hello@level52.ca</a></p>
                     <p style="font-size:.85rem; color:rgba(255,255,255,0.7); margin-bottom:.5rem;">Proceeds from Champions Summit support <a href="https://www.classroomchampions.org" target="_blank" rel="noopener" style="color:#D8722C; text-decoration:underline;">Classroom Champions</a>.</p>
                     <p>&copy; 2026 Level 52. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- 2027 INTEREST POP-UP
+         Opens once per device: after 45 seconds, or when the mouse leaves the top of the window.
+         Skipped if the visitor is already looking at the interest form or has submitted it.
+         (The old apply pop-up in main.js stays switched off.) -->
+    <style>
+        .cs-pop { position:fixed; inset:0; z-index:9000; display:flex; align-items:center; justify-content:center; padding:1.25rem; background:rgba(2,47,74,0.75); backdrop-filter:blur(4px); opacity:0; visibility:hidden; pointer-events:none; transition:opacity .35s ease, visibility 0s linear .35s; }
+        .cs-pop.is-open { opacity:1; visibility:visible; pointer-events:auto; transition:opacity .35s ease; }
+        .cs-pop-modal { position:relative; width:100%; max-width:560px; max-height:calc(100vh - 2.5rem); overflow-y:auto; background:#022F4A; border:1px solid rgba(255,255,255,0.12); border-top:4px solid #D8722C; border-radius:10px; padding:2.25rem 2rem 1.5rem; text-align:center; box-shadow:0 30px 80px rgba(0,0,0,0.5); transform:translateY(24px); transition:transform .35s ease; }
+        .cs-pop.is-open .cs-pop-modal { transform:none; }
+        .cs-pop-close { position:absolute; top:.85rem; right:1rem; background:none; border:none; color:rgba(255,255,255,0.5); font-size:1.4rem; line-height:1; cursor:pointer; }
+        .cs-pop-close:hover, .cs-pop-close:focus-visible { color:#FFF; }
+        .cs-pop-label { font-family:'Trebuchet MS',sans-serif; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.22em; color:#D8722C; margin:0 0 1rem; }
+        .cs-pop-title { font-family:'Trebuchet MS',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; text-transform:uppercase; letter-spacing:.03em; color:#FFF; margin:0 0 .75rem; line-height:1.2; }
+        .cs-pop-text { color:rgba(255,255,255,0.8); font-size:1rem; line-height:1.7; margin:0 0 1.5rem; }
+        .cs-pop-form { background:#FFF; border-radius:8px; padding:1.25rem 1.25rem .5rem; text-align:left; min-height:260px; }
+        .cs-pop-dismiss { margin-top:1rem; background:none; border:none; color:rgba(255,255,255,0.45); font-size:.8rem; text-decoration:underline; cursor:pointer; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; }
+        .cs-pop-dismiss:hover, .cs-pop-dismiss:focus-visible { color:rgba(255,255,255,0.8); }
+        @media (max-width:560px) { .cs-pop-modal { padding:2rem 1.1rem 1.25rem; } .cs-pop-form { padding:1rem .75rem .25rem; } }
+        @media (prefers-reduced-motion: reduce) { .cs-pop, .cs-pop-modal { transition:none; } }
+    </style>
+    <div class="cs-pop" id="cs-pop" role="dialog" aria-modal="true" aria-labelledby="cs-pop-title" aria-hidden="true">
+        <div class="cs-pop-modal">
+            <button type="button" class="cs-pop-close" id="cs-pop-close" aria-label="Close">&#x2715;</button>
+            <p class="cs-pop-label">Champions Summit 2027</p>
+            <h2 class="cs-pop-title" id="cs-pop-title">Before You Go.</h2>
+            <p class="cs-pop-text">The 2027 room is taking shape. Join the interest list and be first to hear the dates, the first confirmed CEOs, and when applications open.</p>
+            <div class="cs-pop-form">
+                <div class="hs-form-frame" data-region="na1" data-form-id="d0a0fad3-4e8d-44e6-b311-1c3e2280255f" data-portal-id="3933414"></div>
+            </div>
+            <button type="button" class="cs-pop-dismiss" id="cs-pop-dismiss">I'm not interested</button>
+        </div>
+    </div>
+    <script>
+    (function () {
+        var KEY = 'cs2027_interest_popup_seen';
+        var pop = document.getElementById('cs-pop');
+        var closeBtn = document.getElementById('cs-pop-close');
+        var lastFocus = null, shown = false;
+        function seen() { try { return !!localStorage.getItem(KEY); } catch (e) { return false; } }
+        function mark() { try { localStorage.setItem(KEY, '1'); } catch (e) {} }
+        function formInView() {
+            var sec = document.getElementById('interest');
+            if (!sec) return false;
+            var r = sec.getBoundingClientRect();
+            return r.top < window.innerHeight && r.bottom > 0;
+        }
+        function open() {
+            if (shown || seen() || formInView()) return;
+            shown = true; mark();
+            lastFocus = document.activeElement;
+            pop.classList.add('is-open');
+            pop.setAttribute('aria-hidden', 'false');
+            closeBtn.focus();
+        }
+        function close() {
+            pop.classList.remove('is-open');
+            pop.setAttribute('aria-hidden', 'true');
+            if (lastFocus && lastFocus.focus) lastFocus.focus();
+        }
+        closeBtn.addEventListener('click', close);
+        document.getElementById('cs-pop-dismiss').addEventListener('click', close);
+        pop.addEventListener('click', function (e) { if (e.target === pop) close(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && pop.classList.contains('is-open')) close(); });
+        /* Anyone who submits either form never sees the pop-up again */
+        window.addEventListener('hs-form-event:on-submission:success', mark);
+        if (seen()) return;
+        document.addEventListener('mouseleave', function (e) { if (e.clientY <= 0) open(); });
+        setTimeout(open, 45000);
+    })();
+    </script>
 
     <script src="main.js"></script>
 
