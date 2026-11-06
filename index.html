@@ -219,6 +219,22 @@
                 transition: none !important;
             }
         }
+
+        /* PARTNERS: 2026 PROOF STRIP */
+        .partner-proof { max-width:1040px; margin:0 auto 3.5rem; text-align:center; }
+        .partner-proof-label { color:rgba(255,255,255,0.72); font-size:.78rem; text-transform:uppercase; letter-spacing:.28em; margin:0 0 1.5rem; }
+        .partner-proof-logos { list-style:none; max-width:720px; margin:0 auto; padding:0; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:1rem 1.5rem; }
+        .partner-proof-logos li { flex:0 0 auto; }
+        .partner-proof-logos a { display:flex; align-items:center; justify-content:center; width:150px; height:84px; overflow:hidden; border-radius:6px; }
+        .partner-proof-logos a:focus-visible { outline:2px solid #D8722C; outline-offset:6px; }
+        .partner-proof-logos img { display:block; flex-shrink:0; width:150px; height:150px; object-fit:contain; } /* source logos sit on square transparent canvases; the link box crops the empty space */
+        .partner-proof-presenting { color:rgba(255,255,255,0.72); font-size:.92rem; line-height:1.6; margin:2rem auto 0; max-width:640px; }
+        .partner-proof-presenting a { color:#FFF; text-decoration:underline; text-decoration-color:rgba(216,114,44,0.6); text-underline-offset:3px; }
+        @media (max-width:600px) {
+            .partner-proof-logos { gap:.75rem 1.25rem; }
+            .partner-proof-logos a { width:120px; height:68px; }
+            .partner-proof-logos img { width:120px; height:120px; }
+        }
         /* POST-EVENT: HERO "THAT'S A WRAP" */
         .hero-content .hero-wrap { display:block; font-family:'Trebuchet MS','Lucida Grande',sans-serif; font-size:clamp(1.4rem,2.6vw,1.9rem); font-weight:700; text-transform:uppercase; letter-spacing:.1em; padding-left:.1em; color:#D8722C; margin:-.25rem auto 1.25rem; line-height:1.2; text-align:center; }
 
@@ -992,134 +1008,16 @@
         </section>
 
         <!-- ========================================================================
-             7. PARTNERS & PARTNERSHIP OPPORTUNITIES
+             7. 2027 PARTNERSHIPS (pitch, 2026 proof strip, inquiry CTA)
              (fade-in removed from the outer wrapper: on mobile this block is
               thousands of pixels tall and never reached the reveal threshold)
         ========================================================================= -->
         <section class="sponsors-section dark-section" id="partners">
             <div class="container">
                 <div class="section-header">
-                    <span class="accent-label" style="color:#D8722C;">2026 PARTNERS</span>
-                    <h2 style="color:#FFF;">Trusted By</h2>
-                </div>
-
-                <!-- CONFIRMED PRESENTING PARTNERS -->
-                <div style="max-width:1040px; margin:0 auto 4rem; text-align:center;">
-                    <p style="color:rgba(255,255,255,0.72); font-size:.78rem; text-transform:uppercase; letter-spacing:.28em; margin-bottom:.75rem;">Presenting Partners</p>
-                    <h3 style="color:#FFF; font-size:1.65rem; margin:0 auto .75rem; max-width:720px;">The leaders helping shape the room.</h3>
-                    <p style="color:rgba(255,255,255,0.72); font-size:.98rem; line-height:1.7; max-width:680px; margin:0 auto 2rem;">Champions Summit is backed by operators and builders connected to leadership development, industry, and community impact.</p>
-
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap:1.1rem; align-items:stretch;">
-                        <div style="position:relative; overflow:hidden; background:linear-gradient(145deg, rgba(255,255,255,0.11), rgba(255,255,255,0.045)); border:1px solid rgba(255,255,255,0.16); padding:2rem 1.75rem; border-radius:14px; box-shadow:0 18px 40px rgba(0,0,0,0.16);">
-                            <div style="position:absolute; top:0; left:0; right:0; height:4px; background:#D8722C;"></div>
-                            <p style="font-family:'Trebuchet MS',sans-serif; color:#D8722C; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.16em; margin:0 0 1rem;">Presenting Partner</p>
-                            <div style="width:72px; height:72px; border-radius:50%; background:rgba(255,255,255,0.1); margin:0 auto 1rem; overflow:hidden; display:flex; align-items:center; justify-content:center;">
-                                <img src="photos/jayson-krause.jpg" alt="Jayson Krause" style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:Trebuchet MS,sans-serif; font-size:1.4rem; font-weight:700; color:#FFF;\'>JK</span>';">
-                            </div>
-                            <h3 style="color:#FFF; font-size:1.75rem; margin:0 0 .55rem; line-height:1.15;">Jayson Krause</h3>
-                            <p style="display:flex; align-items:center; justify-content:center; gap:.55rem; color:rgba(255,255,255,0.88); font-size:.95rem; margin:0 0 1.25rem;">
-                                <span>Founder &amp; Board Chair</span>
-                                <a href="https://www.linkedin.com/in/jayson-krause" target="_blank" rel="noopener" aria-label="Jayson Krause LinkedIn profile" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#FFF; color:#022F4A; border-radius:4px; font-family:Arial, sans-serif; font-weight:700; font-size:.82rem; text-decoration:none; line-height:1;">in</a>
-                            </p>
-                            <a href="https://www.level52.ca/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:38px; padding:.55rem .95rem; border:1px solid rgba(255,255,255,0.18); border-radius:999px; color:#FFF; text-decoration:none; font-size:1rem; background:rgba(255,255,255,0.06);">Level 52</a>
-                        </div>
-
-                        <div style="position:relative; overflow:hidden; background:linear-gradient(145deg, rgba(255,255,255,0.11), rgba(255,255,255,0.045)); border:1px solid rgba(255,255,255,0.16); padding:2rem 1.75rem; border-radius:14px; box-shadow:0 18px 40px rgba(0,0,0,0.16);">
-                            <div style="position:absolute; top:0; left:0; right:0; height:4px; background:#D8722C;"></div>
-                            <p style="font-family:'Trebuchet MS',sans-serif; color:#D8722C; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.16em; margin:0 0 1rem;">Presenting Partner</p>
-                            <div style="width:72px; height:72px; border-radius:50%; background:rgba(255,255,255,0.1); margin:0 auto 1rem; overflow:hidden; display:flex; align-items:center; justify-content:center;">
-                                <img src="photos/donovan-nielsen.jpg" alt="Donovan Nielsen" style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:Trebuchet MS,sans-serif; font-size:1.4rem; font-weight:700; color:#FFF;\'>DN</span>';">
-                            </div>
-                            <h3 style="color:#FFF; font-size:1.75rem; margin:0 0 .55rem; line-height:1.15;">Donovan Nielsen</h3>
-                            <p style="display:flex; align-items:center; justify-content:center; gap:.55rem; color:rgba(255,255,255,0.88); font-size:.95rem; margin:0 0 1.25rem;">
-                                <span>President</span>
-                                <a href="https://www.linkedin.com/in/donovan-nielsen-847964112/" target="_blank" rel="noopener" aria-label="Donovan Nielsen LinkedIn profile" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#FFF; color:#022F4A; border-radius:4px; font-family:Arial, sans-serif; font-weight:700; font-size:.82rem; text-decoration:none; line-height:1;">in</a>
-                            </p>
-                            <div style="display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:.55rem; margin:0;">
-                                <a href="https://scovan.ca/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:38px; padding:.55rem .95rem; border:1px solid rgba(255,255,255,0.18); border-radius:999px; color:#FFF; text-decoration:none; font-size:1rem; background:rgba(255,255,255,0.06);">Scovan</a>
-                                <a href="https://www.starbellygroup.com/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:38px; padding:.55rem .95rem; border:1px solid rgba(255,255,255,0.18); border-radius:999px; color:#FFF; text-decoration:none; font-size:1rem; background:rgba(255,255,255,0.06);">Starbelly Group</a>
-                            </div>
-                        </div>
-
-                        <div style="position:relative; overflow:hidden; background:linear-gradient(145deg, rgba(255,255,255,0.11), rgba(255,255,255,0.045)); border:1px solid rgba(255,255,255,0.16); padding:2rem 1.75rem; border-radius:14px; box-shadow:0 18px 40px rgba(0,0,0,0.16);">
-                            <div style="position:absolute; top:0; left:0; right:0; height:4px; background:#D8722C;"></div>
-                            <p style="font-family:'Trebuchet MS',sans-serif; color:#D8722C; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.16em; margin:0 0 1rem;">Presenting Partner</p>
-                            <div style="width:72px; height:72px; border-radius:50%; background:rgba(255,255,255,0.1); margin:0 auto 1rem; overflow:hidden; display:flex; align-items:center; justify-content:center;">
-                                <img src="photos/seth-rosenzweig.jpg" alt="Seth Rosenzweig" style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:Trebuchet MS,sans-serif; font-size:1.4rem; font-weight:700; color:#FFF;\'>SR</span>';">
-                            </div>
-                            <h3 style="color:#FFF; font-size:1.75rem; margin:0 0 .55rem; line-height:1.15;">Seth Rosenzweig</h3>
-                            <p style="display:flex; align-items:center; justify-content:center; gap:.55rem; color:rgba(255,255,255,0.88); font-size:.95rem; margin:0 0 1.25rem;">
-                                <span>CEO</span>
-                                <a href="https://www.linkedin.com/in/seth-rosenzweig-3a476b6/" target="_blank" rel="noopener" aria-label="Seth Rosenzweig LinkedIn profile" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#FFF; color:#022F4A; border-radius:4px; font-family:Arial, sans-serif; font-weight:700; font-size:.82rem; text-decoration:none; line-height:1;">in</a>
-                            </p>
-                            <a href="https://www.classroomchampions.org/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-height:38px; padding:.55rem .95rem; border:1px solid rgba(255,255,255,0.18); border-radius:999px; color:#FFF; text-decoration:none; font-size:1rem; background:rgba(255,255,255,0.06);">Classroom Champions</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CONFIRMED PARTNERS -->
-                <div style="max-width:1040px; margin:0 auto 4rem; text-align:center;">
-                    <p style="color:rgba(255,255,255,0.72); font-size:.78rem; text-transform:uppercase; letter-spacing:.28em; margin-bottom:.75rem;">Experience Partners</p>
-                    <h3 style="color:#FFF; font-size:1.65rem; margin:0 auto .75rem; max-width:720px;">The organizations backing key summit experiences.</h3>
-                    <p style="color:rgba(255,255,255,0.72); font-size:.98rem; line-height:1.7; max-width:680px; margin:0 auto 2rem;">These partners bring you the leadership experiences that make Champions Summit more than a conference.</p>
-                    <div class="confirmed-sponsors-grid">
-                        <div class="confirmed-sponsor-card">
-                            <p class="confirmed-sponsor-label">Champions Pathway Partner</p>
-                            <a href="https://craigsenyk.com/" target="_blank" rel="noopener" class="confirmed-sponsor-logo-wrap" aria-label="Visit Craig Senyk Initiatives">
-                                <img src="logos/craig-senyk-initiatives.png" alt="Craig Senyk Initiatives logo" class="confirmed-sponsor-logo">
-                            </a>
-                            <h3 class="confirmed-sponsor-title">Craig Senyk Initiatives</h3>
-                        </div>
-                        <div class="confirmed-sponsor-card">
-                            <p class="confirmed-sponsor-label">Leadership Simulation Partner</p>
-                            <a href="https://orennia.com/" target="_blank" rel="noopener" class="confirmed-sponsor-logo-wrap" aria-label="Visit Orennia">
-                                <img src="logos/orennia.png" alt="Orennia logo" class="confirmed-sponsor-logo">
-                            </a>
-                            <h3 class="confirmed-sponsor-title">Orennia</h3>
-                        </div>
-                        <div class="confirmed-sponsor-card">
-                            <p class="confirmed-sponsor-label">Evening Experience Partner</p>
-                            <a href="https://www.mnp.ca/" target="_blank" rel="noopener" class="confirmed-sponsor-logo-wrap" aria-label="Visit MNP">
-                                <img src="logos/MNP-logo.png" alt="MNP logo" class="confirmed-sponsor-logo">
-                            </a>
-                            <h3 class="confirmed-sponsor-title">MNP</h3>
-                        </div>
-                        <div class="confirmed-sponsor-card">
-                            <p class="confirmed-sponsor-label">Mentor Café Partner</p>
-                            <a href="https://javaholdings.ca/" target="_blank" rel="noopener" class="confirmed-sponsor-logo-wrap" aria-label="Visit Java Global Energy Infrastructure Solutions">
-                                <img src="logos/java-holdings.png" alt="Java Global Energy Infrastructure Solutions logo" class="confirmed-sponsor-logo">
-                            </a>
-                            <h3 class="confirmed-sponsor-title">Global Energy Infrastructure Solutions</h3>
-                        </div>
-                        <div class="confirmed-sponsor-card">
-                            <p class="confirmed-sponsor-label">Champions Hour Partner</p>
-                            <a href="https://www.ovintiv.com/" target="_blank" rel="noopener" class="confirmed-sponsor-logo-wrap" aria-label="Visit Ovintiv">
-                                <img src="logos/Ovintiv-logo.png" alt="Ovintiv logo" class="confirmed-sponsor-logo">
-                            </a>
-                            <h3 class="confirmed-sponsor-title">Ovintiv</h3>
-                        </div>
-                        <div class="confirmed-sponsor-card">
-                            <p class="confirmed-sponsor-label">Diary of a COO Partner</p>
-                            <a href="https://www.brunel.net/en-us/locations/calgary" target="_blank" rel="noopener" class="confirmed-sponsor-logo-wrap" aria-label="Visit Brunel">
-                                <img src="logos/brunel-logo.png" alt="Brunel logo" class="confirmed-sponsor-logo">
-                            </a>
-                            <h3 class="confirmed-sponsor-title">Brunel</h3>
-                        </div>
-                        <div class="confirmed-sponsor-card">
-                            <p class="confirmed-sponsor-label">Furniture Partner</p>
-                            <a href="https://www.rgo.ca/" target="_blank" rel="noopener" class="confirmed-sponsor-logo-wrap" aria-label="Visit RGO">
-                                <img src="logos/rgo-logo.png" alt="RGO logo" class="confirmed-sponsor-logo">
-                            </a>
-                            <h3 class="confirmed-sponsor-title">RGO</h3>
-                        </div>
-                        <div class="confirmed-sponsor-card">
-                            <p class="confirmed-sponsor-label">Networking Partner</p>
-                            <a href="https://fitkitchen.ca/" target="_blank" rel="noopener" class="confirmed-sponsor-logo-wrap" aria-label="Visit Fit Kitchen">
-                                <img src="logos/fit-kitchen-logo.png" alt="Fit Kitchen logo" class="confirmed-sponsor-logo">
-                            </a>
-                            <h3 class="confirmed-sponsor-title">Fit Kitchen</h3>
-                        </div>
-                    </div>
+                    <span class="accent-label" style="color:#D8722C;">PARTNER IN 2027</span>
+                    <h2 style="color:#FFF; text-wrap:balance;">Help Shape the 2027 Room.</h2>
+                    <p style="color:rgba(255,255,255,0.72); font-size:.98rem; line-height:1.7; max-width:640px; margin:1rem auto 0; text-wrap:balance;">Next year's experiences are being designed now, and partners help decide what they look like.</p>
                 </div>
 
                 <!-- WHAT YOU'RE BUYING -->
@@ -1135,15 +1033,30 @@
                         </div>
                         <div style="background:rgba(255,255,255,0.05); padding:1.5rem; border-left:3px solid #D8722C; border-radius:4px;">
                             <h4 style="color:#FFF; font-size:1.05rem; margin-bottom:.5rem;">Impact, not investment.</h4>
-                            <p style="color:rgba(255,255,255,0.8); font-size:.9rem; line-height:1.6; margin:0;">Proceeds support Classroom Champions — building goal-setting and resilience in K–8 classrooms.</p>
+                            <p style="color:rgba(255,255,255,0.8); font-size:.9rem; line-height:1.6; margin:0;">Proceeds support Classroom Champions, building goal-setting and resilience in K–8 classrooms.</p>
                         </div>
                     </div>
                 </div>
 
+                <!-- 2026 PARTNERS (proof strip: no experience labels, so 2027 slots don't read as taken) -->
+                <div class="partner-proof">
+                    <p class="partner-proof-label">Backed in 2026 by</p>
+                    <ul class="partner-proof-logos">
+                        <li><a href="https://craigsenyk.com/" target="_blank" rel="noopener" aria-label="Visit Craig Senyk Initiatives"><img src="logos/craig-senyk-initiatives.png" alt="Craig Senyk Initiatives logo" loading="lazy"></a></li>
+                        <li><a href="https://orennia.com/" target="_blank" rel="noopener" aria-label="Visit Orennia"><img src="logos/orennia.png" alt="Orennia logo" loading="lazy"></a></li>
+                        <li><a href="https://www.mnp.ca/" target="_blank" rel="noopener" aria-label="Visit MNP"><img src="logos/MNP-logo.png" alt="MNP logo" loading="lazy"></a></li>
+                        <li><a href="https://javaholdings.ca/" target="_blank" rel="noopener" aria-label="Visit Global Energy Infrastructure Solutions"><img src="logos/java-holdings.png" alt="Global Energy Infrastructure Solutions logo" loading="lazy"></a></li>
+                        <li><a href="https://www.ovintiv.com/" target="_blank" rel="noopener" aria-label="Visit Ovintiv"><img src="logos/Ovintiv-logo.png" alt="Ovintiv logo" loading="lazy"></a></li>
+                        <li><a href="https://www.brunel.net/en-us/locations/calgary" target="_blank" rel="noopener" aria-label="Visit Brunel"><img src="logos/brunel-logo.png" alt="Brunel logo" loading="lazy"></a></li>
+                        <li><a href="https://www.rgo.ca/" target="_blank" rel="noopener" aria-label="Visit RGO"><img src="logos/rgo-logo.png" alt="RGO logo" loading="lazy"></a></li>
+                        <li><a href="https://fitkitchen.ca/" target="_blank" rel="noopener" aria-label="Visit Fit Kitchen"><img src="logos/fit-kitchen-logo.png" alt="Fit Kitchen logo" loading="lazy"></a></li>
+                    </ul>
+                    <p class="partner-proof-presenting">Presented by <a href="https://www.level52.ca/" target="_blank" rel="noopener">Level 52</a>, <a href="https://scovan.ca/" target="_blank" rel="noopener">Scovan</a> and <a href="https://www.classroomchampions.org/" target="_blank" rel="noopener">Classroom Champions</a></p>
+                </div>
+
                 <!-- 2027 PARTNERSHIPS -->
                 <div style="max-width:780px; margin:0 auto; padding:2.25rem; background:rgba(216,114,44,0.12); border:1px solid rgba(216,114,44,0.4); border-radius:8px; text-align:center;">
-                    <p style="color:#D8722C; font-family:'Trebuchet MS',sans-serif; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.22em; margin-bottom:1rem;">Partner in 2027</p>
-                    <p style="color:#FFF; font-size:1.15rem; line-height:1.6; margin-bottom:1.5rem;">Every 2026 partnership was exclusive: one partner per experience. 2027 opportunities are being shaped now. Let's talk about where your organization fits.</p>
+                    <p style="color:#FFF; font-size:1.15rem; line-height:1.6; margin-bottom:1.5rem;">Every 2026 partnership was exclusive: one partner per experience. Let's talk about where your organization fits in 2027.</p>
                     <a href="mailto:jayson@level52.ca?subject=Champions%20Summit%202027%20Partnership&amp;body=Hi%20Jayson%2C%0A%0AI%27m%20interested%20in%20exploring%20a%20partnership%20for%20Champions%20Summit%202027%20and%20would%20love%20to%20learn%20more%20about%20the%20opportunities.%0A%0AName%3A%0AOrganization%3A%0ARole%3A%0A%0AThanks%2C" class="btn-primary btn-large">Explore 2027 Partnerships</a>
                 </div>
             </div>
